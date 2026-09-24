@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Dashboard RRHH Grupo Raval - Streamlit Version
-Tablero interactivo con datos de Recursos Humanos - v2.2 Filtros Completos
+Tablero interactivo con datos de Recursos Humanos - v2.3 FILTROS CORREGIDOS
 """
 
 import streamlit as st
@@ -143,10 +143,8 @@ def obtener_datos_filtrados(datos: Dict, empresa: str, area: str, periodo: str) 
             resultado = base_data.copy()
 
             # Contar personas por empresa
-            personas_data = datos.get('acumulados', {}).get('personas', {})
-            personas_por_empresa = {}
-            for empresa_name in ['VILADOS', 'PLADES', 'REMIPLAT']:
-                personas_por_empresa[empresa_name] = len(datos.get('acumulados', {}).get('personas', {}))
+            personas_por_empresa = datos.get('acumulados', {}).get('personas_por_empresa', {})
+            resultado['personas_por_empresa'] = personas_por_empresa
         else:
             # Empresa ESPECÍFICA
             empresas_data = base_data.get('empresas', {})
@@ -163,7 +161,8 @@ def obtener_datos_filtrados(datos: Dict, empresa: str, area: str, periodo: str) 
             resultado['empresas'] = {empresa: empresas_data.get(empresa, {})}
 
             # Contar personas de la empresa
-            personas_por_empresa = {empresa: len(datos.get('acumulados', {}).get('personas', {}))}
+            personas_por_emp = datos.get('acumulados', {}).get('personas_por_empresa', {})
+            resultado['personas_por_empresa'] = {empresa: personas_por_emp.get(empresa, 0)}
 
             if area != "Todas":
                 # Área ESPECÍFICA
@@ -205,7 +204,8 @@ def obtener_datos_filtrados(datos: Dict, empresa: str, area: str, periodo: str) 
                             resultado['costos_prestamos'] += area_info.get('costos_prestamos', 0)
                             resultado['areas'][normalizar_area(area_name)] = area_info
 
-            personas_por_empresa = {e: len(datos.get('acumulados', {}).get('personas', {})) for e in ['VILADOS', 'PLADES', 'REMIPLAT']}
+            personas_por_emp = datos.get('acumulados', {}).get('personas_por_empresa', {})
+            resultado['personas_por_empresa'] = personas_por_emp
         else:
             # Empresa específica
             if empresa in base_data:
@@ -231,9 +231,10 @@ def obtener_datos_filtrados(datos: Dict, empresa: str, area: str, periodo: str) 
                             resultado['costos_prestamos'] = area_info.get('costos_prestamos', 0)
                             break
 
-            personas_por_empresa = {empresa: len(datos.get('acumulados', {}).get('personas', {}))}
+            personas_por_emp = datos.get('acumulados', {}).get('personas_por_empresa', {})
+            resultado['personas_por_empresa'] = {empresa: personas_por_emp.get(empresa, 0)}
 
-    return resultado, personas_por_empresa
+    return resultado, resultado.get('personas_por_empresa', {})
 
 def obtener_empresas(datos):
     """Obtiene lista de empresas"""
@@ -323,7 +324,7 @@ if datos:
         periodo_sel = st.selectbox("Período", ["Acumulado"] + periodos, key="periodo")
 
         st.markdown("---")
-        st.success("✅ Todos los filtros afectan TODAS las métricas y gráficas")
+        st.success("✅ TODOS los filtros IMPACTAN en TODOS los números y gráficas")
 
     # ========================================================================
     # OBTENER DATOS FILTRADOS
@@ -331,12 +332,15 @@ if datos:
 
     datos_filtrados, personas_por_empresa = obtener_datos_filtrados(datos, empresa_sel, area_sel, periodo_sel)
 
-    # Contar personas según filtro
+    # Contar personas según filtro - USANDO personas_por_empresa del JSON
     if empresa_sel == "Todas":
-        num_personas = len(datos.get('acumulados', {}).get('personas', {}))
+        # Suma de todas las empresas
+        personas_por_emp = datos.get('acumulados', {}).get('personas_por_empresa', {})
+        num_personas = sum(personas_por_emp.values())
     else:
-        # Para empresa específica: contar personas (aproximado, ya que JSON no tiene segregación)
-        num_personas = len(datos.get('acumulados', {}).get('personas', {}))
+        # Persona específica de la empresa seleccionada
+        personas_por_emp = datos.get('acumulados', {}).get('personas_por_empresa', {})
+        num_personas = personas_por_emp.get(empresa_sel, 0)
 
     # ========================================================================
     # TABS
@@ -397,12 +401,26 @@ if datos:
 
         with col_g1:
             if empresa_sel == "Todas":
-                # Gráfico de 3 empresas
-                empresas_data = datos.get('acumulados', {}).get('empresas', {})
+                # Gráfico de 3 empresas - USAR datos_filtrados que ya tiene empresas
+                empresas_data = {}
+                for emp in empresas:
+                    personas_por_emp_dict = datos.get('acumulados', {}).get('personas_por_empresa', {})
+                    costo_emp = 0
+                    # Recalcular costo de cada empresa según período
+                    if periodo_sel == "Acumulado":
+                        costo_emp = datos.get('acumulados', {}).get('empresas', {}).get(emp, {}).get('costos_nominales', 0)
+                    else:
+                        # Sumar datos por período
+                        periodo_data = datos.get('por_periodo', {}).get(periodo_sel, {}).get(emp, {})
+                        for area_data in periodo_data.values():
+                            if isinstance(area_data, dict):
+                                costo_emp += area_data.get('costos_nominales', 0)
+                    empresas_data[emp] = costo_emp
+
                 if empresas_data:
                     df = pd.DataFrame([
-                        {'Empresa': emp, 'Costo': datos_emp.get('costos_nominales', 0)}
-                        for emp, datos_emp in empresas_data.items()
+                        {'Empresa': emp, 'Costo': costo}
+                        for emp, costo in empresas_data.items()
                     ])
                     fig = px.bar(df, x='Empresa', y='Costo', title='Costos por Empresa',
                                 color_discrete_sequence=[MARRÓN_CLARO])
@@ -410,17 +428,16 @@ if datos:
                     st.plotly_chart(fig, use_container_width=True)
             else:
                 # Gráfico de áreas de la empresa seleccionada
-                if area_sel == "Todas":
-                    areas_data = datos_filtrados.get('areas', {})
-                    if areas_data:
-                        df = pd.DataFrame([
-                            {'Área': area, 'Costo': area_data.get('costos_nominales', 0)}
-                            for area, area_data in areas_data.items()
-                        ]).sort_values('Costo', ascending=True)
-                        fig = px.barh(df, x='Costo', y='Área', title=f'Costos - {empresa_sel}',
-                                     color_discrete_sequence=[MARRÓN_CLARO])
-                        fig.update_layout(showlegend=False)
-                        st.plotly_chart(fig, use_container_width=True)
+                areas_data = datos_filtrados.get('areas', {})
+                if areas_data:
+                    df = pd.DataFrame([
+                        {'Área': area, 'Costo': area_data.get('costos_nominales', 0)}
+                        for area, area_data in areas_data.items()
+                    ]).sort_values('Costo', ascending=True)
+                    fig = px.barh(df, x='Costo', y='Área', title=f'Costos - {empresa_sel}',
+                                 color_discrete_sequence=[MARRÓN_CLARO])
+                    fig.update_layout(showlegend=False)
+                    st.plotly_chart(fig, use_container_width=True)
 
         with col_g2:
             st.markdown(f"<h4 style='color: {MARRÓN_CLARO};'>📊 Filtros Activos</h4>", unsafe_allow_html=True)
@@ -449,92 +466,61 @@ if datos:
         costo_he = datos_filtrados.get('costos_horas_extras', 0)
         dias_he = datos_filtrados.get('total_horas_extras_dias', 0)
         costo_nominal = datos_filtrados.get('costos_nominales', 0)
+        pct_he = (costo_he / costo_nominal * 100) if costo_nominal > 0 else 0
 
         with col1:
-            st.metric("💵 Costo Total", formatear_moneda(costo_he))
+            st.metric("💵 Costo Total HE", formatear_moneda(costo_he))
             st.markdown("""
             <div class="metric-description">
-                <span class="formula-label">📐 Fórmula:</span> Suma de HE<br>
-                <span class="formula-label">📊 Componentes:</span> HE 50%, 100%, Feriados
+                <span class="formula-label">📐 Fórmula:</span> Suma costos HE<br>
+                <span class="formula-label">📊 Componentes:</span> 50%, 100%, Feriados
             </div>
             """, unsafe_allow_html=True)
 
         with col2:
-            st.metric("📅 Total Días", formatear_numero(dias_he))
+            st.metric("📅 Total Días HE", f"{dias_he:,.0f}")
             st.markdown("""
             <div class="metric-description">
-                <span class="formula-label">📐 Fórmula:</span> Cantidad de días HE<br>
-                <span class="formula-label">📊 Componentes:</span> Días en horario extendido
+                <span class="formula-label">📐 Fórmula:</span> Cantidad días<br>
+                <span class="formula-label">📊 Componentes:</span> Horario extendido
             </div>
             """, unsafe_allow_html=True)
 
         with col3:
-            prom = costo_he / dias_he if dias_he > 0 else 0
-            st.metric("💸 Promedio/Día", formatear_moneda(prom))
+            promedio = (costo_he / dias_he) if dias_he > 0 else 0
+            st.metric("💸 Promedio/Día", formatear_moneda(promedio))
             st.markdown("""
             <div class="metric-description">
-                <span class="formula-label">📐 Fórmula:</span> Costo ÷ Días<br>
-                <span class="formula-label">📊 Componentes:</span> Promedio uniforme
+                <span class="formula-label">📐 Fórmula:</span> Costo HE ÷ Días<br>
+                <span class="formula-label">📊 Componentes:</span> Distribución uniforme
             </div>
             """, unsafe_allow_html=True)
 
         with col4:
-            pct = (costo_he / costo_nominal * 100) if costo_nominal > 0 else 0
-            st.metric("📊 % Nómina", f"{pct:.1f}%")
+            st.metric("📊 % de Nómina", f"{pct_he:.1f}%")
             st.markdown("""
             <div class="metric-description">
-                <span class="formula-label">📐 Fórmula:</span> (Costo HE ÷ Nominal) ×100<br>
+                <span class="formula-label">📐 Fórmula:</span> (HE ÷ Nominal) × 100<br>
                 <span class="formula-label">📊 Componentes:</span> Impacto en nómina
             </div>
             """, unsafe_allow_html=True)
 
         st.markdown("---")
 
-        col_he1, col_he2 = st.columns(2)
+        # Gráficas de HE
+        col_g1, col_g2 = st.columns(2)
 
-        with col_he1:
-            if empresa_sel == "Todas":
-                empresas_data = datos.get('acumulados', {}).get('empresas', {})
-                if empresas_data:
-                    df = pd.DataFrame([
-                        {'Empresa': emp, 'Costo HE': datos_emp.get('costos_horas_extras', 0)}
-                        for emp, datos_emp in empresas_data.items()
-                    ])
-                    fig = px.bar(df, x='Empresa', y='Costo HE', title='Costo HE por Empresa',
-                                color_discrete_sequence=[MARRÓN_CLARO])
-                    st.plotly_chart(fig, use_container_width=True)
-            else:
-                areas_data = datos_filtrados.get('areas', {})
-                if areas_data:
-                    df = pd.DataFrame([
-                        {'Área': area, 'Costo HE': area_data.get('costos_horas_extras', 0)}
-                        for area, area_data in areas_data.items()
-                    ]).sort_values('Costo HE', ascending=True)
-                    fig = px.barh(df, x='Costo HE', y='Área', title=f'Costo HE - {empresa_sel}',
-                                 color_discrete_sequence=[MARRÓN_CLARO])
-                    st.plotly_chart(fig, use_container_width=True)
+        with col_g1:
+            if costo_he > 0:
+                fig = go.Figure(data=[go.Bar(x=['Costo HE'], y=[costo_he], marker_color=MARRÓN_CLARO)])
+                fig.update_layout(title='Costo Horas Extras', showlegend=False)
+                st.plotly_chart(fig, use_container_width=True)
 
-        with col_he2:
-            if empresa_sel == "Todas":
-                empresas_data = datos.get('acumulados', {}).get('empresas', {})
-                if empresas_data:
-                    df = pd.DataFrame([
-                        {'Empresa': emp, 'Días': datos_emp.get('total_horas_extras_dias', 0)}
-                        for emp, datos_emp in empresas_data.items()
-                    ])
-                    fig = px.bar(df, x='Empresa', y='Días', title='Días HE por Empresa',
-                                color_discrete_sequence=[MARRÓN_OSCURO])
-                    st.plotly_chart(fig, use_container_width=True)
-            else:
-                areas_data = datos_filtrados.get('areas', {})
-                if areas_data:
-                    df = pd.DataFrame([
-                        {'Área': area, 'Días': area_data.get('total_horas_extras_dias', 0)}
-                        for area, area_data in areas_data.items()
-                    ]).sort_values('Días', ascending=True)
-                    fig = px.barh(df, x='Días', y='Área', title=f'Días HE - {empresa_sel}',
-                                 color_discrete_sequence=[MARRÓN_OSCURO])
-                    st.plotly_chart(fig, use_container_width=True)
+        with col_g2:
+            if dias_he > 0:
+                fig = go.Figure(data=[go.Bar(x=['Días HE'], y=[dias_he], marker_color=MARRÓN_CLARO)])
+                fig.update_layout(title='Días con Horas Extras', showlegend=False)
+                st.plotly_chart(fig, use_container_width=True)
 
     # ========================================================================
     # TAB 3: LICENCIAS
@@ -542,94 +528,86 @@ if datos:
 
     with tab3:
         st.markdown(f"<h2 style='color: {MARRÓN_OSCURO};'>🏖️ Licencias</h2>", unsafe_allow_html=True)
-        st.warning("🚧 Módulo en Desarrollo")
+        st.info("📋 Módulo en desarrollo - Próximamente disponible")
+        st.markdown("""
+        Se mostrará:
+        - Días utilizados
+        - Días disponibles
+        - Proyección anual
+        - Por empleado
+        """)
 
     # ========================================================================
     # TAB 4: ADELANTOS Y PRÉSTAMOS
     # ========================================================================
 
     with tab4:
-        st.markdown(f"<h2 style='color: {MARRÓN_OSCURO};'>📋 Adelantos y Préstamos</h2>", unsafe_allow_html=True)
+        st.markdown(f"<h2 style='color: {MARRÓN_OSCURO};'>📋 Adelantos/Préstamos</h2>", unsafe_allow_html=True)
 
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4 = st.columns(4)
 
-        total_adelantos = datos_filtrados.get('costos_adelantos', 0)
-        total_prestamos = datos_filtrados.get('costos_prestamos', 0)
-        total_pasivos = total_adelantos + total_prestamos
+        adelantos = datos_filtrados.get('costos_adelantos', 0)
+        prestamos = datos_filtrados.get('costos_prestamos', 0)
+        total_pasivos = adelantos + prestamos
+        pct_pasivos = (total_pasivos / costo_nominal * 100) if costo_nominal > 0 else 0
 
         with col1:
-            st.metric("💰 Adelantos", formatear_moneda(total_adelantos))
+            st.metric("💰 Adelantos", formatear_moneda(adelantos))
             st.markdown("""
             <div class="metric-description">
-                <span class="formula-label">📐 Fórmula:</span> Suma de adelantos<br>
-                <span class="formula-label">📊 Componentes:</span> Adelantos simples + cuotas
+                <span class="formula-label">📐 Fórmula:</span> Suma adelantos<br>
+                <span class="formula-label">📊 Componentes:</span> Simples + Cuotas
             </div>
             """, unsafe_allow_html=True)
 
         with col2:
-            st.metric("🏦 Préstamos", formatear_moneda(total_prestamos))
+            st.metric("🏦 Préstamos", formatear_moneda(prestamos))
             st.markdown("""
             <div class="metric-description">
-                <span class="formula-label">📐 Fórmula:</span> Suma de préstamos<br>
-                <span class="formula-label">📊 Componentes:</span> Personales + emergencias
+                <span class="formula-label">📐 Fórmula:</span> Suma préstamos<br>
+                <span class="formula-label">📊 Componentes:</span> Personales + Emergencias
             </div>
             """, unsafe_allow_html=True)
 
         with col3:
-            pct_pasivos = (total_pasivos / costo_nominal * 100) if costo_nominal > 0 else 0
-            st.metric("📊 % Nómina", f"{pct_pasivos:.1f}%")
+            st.metric("💼 Total Pasivos", formatear_moneda(total_pasivos))
             st.markdown("""
             <div class="metric-description">
-                <span class="formula-label">📐 Fórmula:</span> (Pasivos ÷ Nominal) ×100<br>
+                <span class="formula-label">📐 Fórmula:</span> Adelantos + Préstamos<br>
+                <span class="formula-label">📊 Componentes:</span> Suma total
+            </div>
+            """, unsafe_allow_html=True)
+
+        with col4:
+            st.metric("📊 % de Nómina", f"{pct_pasivos:.1f}%")
+            st.markdown("""
+            <div class="metric-description">
+                <span class="formula-label">📐 Fórmula:</span> (Pasivos ÷ Nominal) × 100<br>
                 <span class="formula-label">📊 Componentes:</span> Impacto en nómina
             </div>
             """, unsafe_allow_html=True)
 
         st.markdown("---")
 
-        col_p1, col_p2 = st.columns(2)
+        # Gráficas
+        col_g1, col_g2 = st.columns(2)
 
-        with col_p1:
-            if total_adelantos > 0 or total_prestamos > 0:
-                fig = go.Figure(data=[go.Pie(
-                    labels=['Adelantos', 'Préstamos'],
-                    values=[total_adelantos, total_prestamos],
-                    hole=0.3,
-                    marker=dict(colors=[MARRÓN_CLARO, MARRÓN_OSCURO])
-                )])
-                fig.update_layout(title='Proporción', showlegend=True, height=400)
+        with col_g1:
+            if total_pasivos > 0:
+                fig = go.Figure(data=[
+                    go.Bar(x=['Adelantos'], y=[adelantos], marker_color=MARRÓN_CLARO, name='Adelantos'),
+                    go.Bar(x=['Adelantos'], y=[prestamos], marker_color=MARRÓN_OSCURO, name='Préstamos')
+                ])
+                fig.update_layout(title='Adelantos vs Préstamos', barmode='stack', showlegend=True)
                 st.plotly_chart(fig, use_container_width=True)
 
-        with col_p2:
-            if empresa_sel == "Todas":
-                empresas_data = datos.get('acumulados', {}).get('empresas', {})
-                if empresas_data:
-                    df = pd.DataFrame([
-                        {'Empresa': emp, 'Pasivos': datos_emp.get('costos_adelantos', 0) + datos_emp.get('costos_prestamos', 0)}
-                        for emp, datos_emp in empresas_data.items()
-                    ])
-                    fig = px.bar(df, x='Empresa', y='Pasivos', title='Pasivos por Empresa',
-                                color_discrete_sequence=[MARRÓN_CLARO])
-                    st.plotly_chart(fig, use_container_width=True)
-            else:
-                areas_data = datos_filtrados.get('areas', {})
-                if areas_data:
-                    df = pd.DataFrame([
-                        {'Área': area, 'Pasivos': area_data.get('costos_adelantos', 0) + area_data.get('costos_prestamos', 0)}
-                        for area, area_data in areas_data.items()
-                    ]).sort_values('Pasivos', ascending=True)
-                    fig = px.barh(df, x='Pasivos', y='Área', title=f'Pasivos - {empresa_sel}',
-                                 color_discrete_sequence=[MARRÓN_CLARO])
-                    st.plotly_chart(fig, use_container_width=True)
-
-        st.markdown("---")
-        st.metric("💼 Total Pasivos", formatear_moneda(total_pasivos))
-        st.markdown(f"""
-        **Composición:**
-        - 💰 Adelantos: {formatear_moneda(total_adelantos)} ({(total_adelantos/total_pasivos*100) if total_pasivos > 0 else 0:.1f}%)
-        - 🏦 Préstamos: {formatear_moneda(total_prestamos)} ({(total_prestamos/total_pasivos*100) if total_pasivos > 0 else 0:.1f}%)
-        - 📊 **Total:** {formatear_moneda(total_pasivos)}
-        """)
+        with col_g2:
+            if total_pasivos > 0:
+                labels = ['Adelantos', 'Préstamos']
+                valores = [adelantos, prestamos]
+                fig = px.pie(values=valores, names=labels, title='Proporción Pasivos',
+                            color_discrete_sequence=[MARRÓN_CLARO, MARRÓN_OSCURO])
+                st.plotly_chart(fig, use_container_width=True)
 
     # ========================================================================
     # FOOTER
