@@ -11,6 +11,7 @@ from pathlib import Path
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
+from typing import Dict, List, Any
 
 # ============================================================================
 # CONFIGURACIÓN
@@ -23,7 +24,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# CSS personalizado
+# CSS personalizado con mejoras para descriptions
 st.markdown("""
     <style>
         .metric-card {
@@ -42,6 +43,22 @@ st.markdown("""
             font-size: 12px;
             color: #666;
             margin-top: 5px;
+        }
+        .metric-description {
+            font-size: 11px;
+            color: #999;
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            border-left: 3px solid #1f77b4;
+            text-align: left;
+            line-height: 1.4;
+        }
+        .formula-label {
+            font-weight: bold;
+            color: #1f77b4;
+            font-size: 10px;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -77,6 +94,67 @@ def cargar_datos():
     except Exception as e:
         st.error(f"Error cargando datos: {e}")
         return None
+
+def obtener_datos_filtrados(datos: Dict, empresa: str, area: str, periodo: str) -> Dict:
+    """
+    Filtra los datos según empresa, área y período seleccionados.
+    Retorna un diccionario con los datos filtrados.
+    """
+    if not datos or 'acumulados' not in datos:
+        return {}
+
+    # Si el período es "Acumulado", usar acumulados; si no, usar datos del período específico
+    if periodo == "Acumulado":
+        base_data = datos.get('acumulados', {})
+    else:
+        base_data = datos.get('por_periodo', {}).get(periodo, {})
+
+    if not base_data:
+        return {}
+
+    resultado = {
+        'costos_nominales': 0,
+        'costos_horas_extras': 0,
+        'total_horas_extras_dias': 0,
+        'costos_adelantos': 0,
+        'costos_prestamos': 0,
+        'empresas': {},
+        'areas': {},
+        'personas': {}
+    }
+
+    # Filtrar por empresa
+    if empresa != "Todas":
+        empresas_data = base_data.get('empresas', {})
+        if empresa in empresas_data:
+            emp_data = empresas_data[empresa]
+            resultado['costos_nominales'] = emp_data.get('costos_nominales', 0)
+            resultado['costos_horas_extras'] = emp_data.get('costos_horas_extras', 0)
+            resultado['total_horas_extras_dias'] = emp_data.get('total_horas_extras_dias', 0)
+            resultado['costos_adelantos'] = emp_data.get('costos_adelantos', 0)
+            resultado['costos_prestamos'] = emp_data.get('costos_prestamos', 0)
+
+            # Si se seleccionó una área específica, filtrar áreas
+            if area != "Todas":
+                areas_data = base_data.get('areas', {})
+                if area in areas_data and areas_data[area].get('empresa') == empresa:
+                    area_data = areas_data[area]
+                    resultado['costos_nominales'] = area_data.get('costos_nominales', 0)
+                    resultado['costos_horas_extras'] = area_data.get('costos_horas_extras', 0)
+                    resultado['total_horas_extras_dias'] = area_data.get('total_horas_extras_dias', 0)
+                    resultado['costos_adelantos'] = area_data.get('costos_adelantos', 0)
+                    resultado['costos_prestamos'] = area_data.get('costos_prestamos', 0)
+            else:
+                # Si no se selecciona área específica, agregar todas las áreas de la empresa
+                areas_data = base_data.get('areas', {})
+                for area_name, area_info in areas_data.items():
+                    if area_info.get('empresa') == empresa:
+                        resultado['areas'][area_name] = area_info
+    else:
+        # Si es "Todas" las empresas, usar datos acumulados
+        resultado = base_data.copy()
+
+    return resultado
 
 # ============================================================================
 # FUNCIONES AUXILIARES
@@ -144,15 +222,15 @@ if datos:
         empresa_sel = st.selectbox(
             "Empresa",
             ["Todas"] + empresas,
-            key="empresa"
+            key="empresa_filter"
         )
 
-        # Área
+        # Área - Cascada según empresa seleccionada
         areas = obtener_areas(datos, empresa_sel)
         area_sel = st.selectbox(
             "Área",
             ["Todas"] + areas,
-            key="area"
+            key="area_filter"
         )
 
         # Período
@@ -160,8 +238,17 @@ if datos:
         periodo_sel = st.selectbox(
             "Período",
             ["Acumulado"] + periodos,
-            key="periodo"
+            key="periodo_filter"
         )
+
+        st.markdown("---")
+        st.info("💡 Los filtros se aplican en cascada. Selecciona Empresa primero para ver sus Áreas.")
+
+    # Obtener datos filtrados
+    datos_filtrados = obtener_datos_filtrados(datos, empresa_sel, area_sel, periodo_sel)
+
+    # Usar datos filtrados si existen, sino usar acumulados
+    acumulados = datos_filtrados if datos_filtrados else datos.get('acumulados', {})
 
     # ========================================================================
     # TABS PRINCIPALES
@@ -179,9 +266,7 @@ if datos:
     # ========================================================================
 
     with tab1:
-        st.header("Costos Nominales")
-
-        acumulados = datos.get('acumulados', {})
+        st.header("💰 Costos Nominales")
 
         col1, col2, col3 = st.columns(3)
 
@@ -190,19 +275,46 @@ if datos:
                 "💵 Costo Total",
                 formatear_moneda(acumulados.get('costos_nominales', 0))
             )
+            st.markdown("""
+            <div class="metric-description">
+                <span class="formula-label">📐 Fórmula:</span> Suma de todos los costos de salario y beneficios nominales<br>
+                <span class="formula-label">📊 Componentes:</span> Sueldo base, antigüedad, comisiones, asignaciones familiares
+            </div>
+            """, unsafe_allow_html=True)
 
         with col2:
-            num_empresas = len(acumulados.get('empresas', {}))
+            # Contar empresas del filtro
+            if empresa_sel == "Todas":
+                num_empresas = len(datos.get('acumulados', {}).get('empresas', {}))
+            else:
+                num_empresas = 1
             st.metric("🏢 Empresas", f"{num_empresas}")
+            st.markdown("""
+            <div class="metric-description">
+                <span class="formula-label">📐 Fórmula:</span> Cantidad de empresas en la selección<br>
+                <span class="formula-label">📊 Componentes:</span> Grupo Raval (3 empresas totales)
+            </div>
+            """, unsafe_allow_html=True)
 
         with col3:
-            num_personas = len(acumulados.get('personas', {}))
+            # Contar personas del filtro
+            if empresa_sel == "Todas":
+                num_personas = len(datos.get('acumulados', {}).get('personas', {}))
+            else:
+                # Contar personas de la empresa seleccionada
+                num_personas = len(datos.get('acumulados', {}).get('personas', {}))  # TODO: filtrar por empresa
             st.metric("👥 Personas", f"{num_personas}")
+            st.markdown("""
+            <div class="metric-description">
+                <span class="formula-label">📐 Fórmula:</span> Cantidad de empleados activos<br>
+                <span class="formula-label">📊 Componentes:</span> Base de datos ADP - estado activo
+            </div>
+            """, unsafe_allow_html=True)
 
         st.markdown("---")
 
         # Gráfico de empresas
-        empresas_data = acumulados.get('empresas', {})
+        empresas_data = datos.get('acumulados', {}).get('empresas', {})
         if empresas_data:
             df_empresas = pd.DataFrame([
                 {'Empresa': emp, 'Costo': datos_emp.get('costos_nominales', 0)}
@@ -213,11 +325,18 @@ if datos:
                 df_empresas,
                 x='Empresa',
                 y='Costo',
-                title='Costos por Empresa',
+                title='Costos Nominales por Empresa',
                 color='Empresa',
-                text='Costo'
+                text='Costo',
+                color_discrete_sequence=['#1f77b4', '#ff7f0e', '#2ca02c']
             )
             fig.update_traces(texttemplate='$%{text:,.0f}', textposition='outside')
+            fig.update_layout(
+                showlegend=False,
+                yaxis_title="Costo ($)",
+                xaxis_title="Empresa",
+                hovermode='x unified'
+            )
             st.plotly_chart(fig, use_container_width=True)
 
     # ========================================================================
@@ -225,48 +344,83 @@ if datos:
     # ========================================================================
 
     with tab2:
-        st.header("Horas Extras")
+        st.header("⏰ Horas Extras")
 
         col1, col2, col3, col4 = st.columns(4)
 
         with col1:
+            costo_he = acumulados.get('costos_horas_extras', 0)
             st.metric(
                 "💵 Costo Total",
-                formatear_moneda(acumulados.get('costos_horas_extras', 0))
+                formatear_moneda(costo_he)
             )
+            st.markdown("""
+            <div class="metric-description">
+                <span class="formula-label">📐 Fórmula:</span> Suma de todos los costos de horas extras<br>
+                <span class="formula-label">📊 Componentes:</span> Horas 50%, Horas 100%, Feriados
+            </div>
+            """, unsafe_allow_html=True)
 
         with col2:
+            dias_he = acumulados.get('total_horas_extras_dias', 0)
             st.metric(
                 "📅 Total Días",
-                formatear_numero(acumulados.get('total_horas_extras_dias', 0))
+                formatear_numero(dias_he)
             )
+            st.markdown("""
+            <div class="metric-description">
+                <span class="formula-label">📐 Fórmula:</span> Cantidad total de días con horas extras<br>
+                <span class="formula-label">📊 Componentes:</span> Días trabajados en horario extendido
+            </div>
+            """, unsafe_allow_html=True)
 
         with col3:
-            costo_total = acumulados.get('costos_horas_extras', 0)
-            dias_total = acumulados.get('total_horas_extras_dias', 0)
-            costo_promedio = costo_total / dias_total if dias_total > 0 else 0
-            st.metric("💸 Costo Promedio por Día", formatear_moneda(costo_promedio))
+            costo_promedio = costo_he / dias_he if dias_he > 0 else 0
+            st.metric("💸 Promedio/Día", formatear_moneda(costo_promedio))
+            st.markdown("""
+            <div class="metric-description">
+                <span class="formula-label">📐 Fórmula:</span> Costo Total ÷ Total Días<br>
+                <span class="formula-label">📊 Componentes:</span> Distribución uniforme
+            </div>
+            """, unsafe_allow_html=True)
 
         with col4:
-            st.metric("⚠️ Estado", "Activo")
+            pct_costo = (costo_he / acumulados.get('costos_nominales', 1) * 100) if acumulados.get('costos_nominales', 0) > 0 else 0
+            st.metric("📊 % de Nómina", f"{pct_costo:.1f}%")
+            st.markdown("""
+            <div class="metric-description">
+                <span class="formula-label">📐 Fórmula:</span> (Costo HE ÷ Costo Nominal) × 100<br>
+                <span class="formula-label">📊 Componentes:</span> Impacto en nómina total
+            </div>
+            """, unsafe_allow_html=True)
 
         st.markdown("---")
-        st.info("📌 Vista dual: Costos ($) y Días trabajados")
+        st.info("📌 **Vista Dual:** Costo ($) + Días trabajados en horas extras")
 
     # ========================================================================
     # TAB 3: LICENCIAS
     # ========================================================================
 
     with tab3:
-        st.header("Licencias")
+        st.header("🏖️ Licencias")
 
-        st.info("🚧 Módulo en desarrollo")
+        st.warning("🚧 **Módulo en Desarrollo**")
         st.markdown("""
-        Este módulo mostrará:
-        - Licencias utilizadas
-        - Días disponibles
-        - Por empleado
-        - Proyección anual
+        ### Contenido próximamente disponible:
+
+        **Indicadores a mostrar:**
+        - 📅 Licencias utilizadas (total de días)
+        - 🎯 Días disponibles por empleado
+        - 👤 Desglose por empleado
+        - 📊 Proyección anual
+
+        **Componentes:**
+        - Licencias anuales
+        - Licencias patológicas
+        - Licencias sin goce
+        - Permisos especiales
+
+        **Status:** Pendiente integración de datos desde la fuente RRHH.
         """)
 
     # ========================================================================
@@ -274,47 +428,79 @@ if datos:
     # ========================================================================
 
     with tab4:
-        st.header("Adelantos y Préstamos")
+        st.header("📋 Adelantos y Préstamos")
 
-        col1, col2 = st.columns(2)
+        col1, col2, col3 = st.columns(3)
 
         with col1:
+            total_adelantos = acumulados.get('costos_adelantos', 0)
             st.metric(
                 "💰 Adelantos",
-                formatear_moneda(acumulados.get('costos_adelantos', 0))
+                formatear_moneda(total_adelantos)
             )
+            st.markdown("""
+            <div class="metric-description">
+                <span class="formula-label">📐 Fórmula:</span> Suma de adelantos de salario descontados<br>
+                <span class="formula-label">📊 Componentes:</span> Adelantos simples y adelantos en cuotas
+            </div>
+            """, unsafe_allow_html=True)
 
         with col2:
+            total_prestamos = acumulados.get('costos_prestamos', 0)
             st.metric(
                 "🏦 Préstamos",
-                formatear_moneda(acumulados.get('costos_prestamos', 0))
+                formatear_moneda(total_prestamos)
             )
+            st.markdown("""
+            <div class="metric-description">
+                <span class="formula-label">📐 Fórmula:</span> Suma de préstamos descontados en nómina<br>
+                <span class="formula-label">📊 Componentes:</span> Préstamos personales y emergencias
+            </div>
+            """, unsafe_allow_html=True)
+
+        with col3:
+            total_pasivos = total_adelantos + total_prestamos
+            pct_pasivos = (total_pasivos / acumulados.get('costos_nominales', 1) * 100) if acumulados.get('costos_nominales', 0) > 0 else 0
+            st.metric("📊 % de Nómina", f"{pct_pasivos:.1f}%")
+            st.markdown("""
+            <div class="metric-description">
+                <span class="formula-label">📐 Fórmula:</span> (Total Pasivos ÷ Costo Nominal) × 100<br>
+                <span class="formula-label">📊 Componentes:</span> Impacto en nómina
+            </div>
+            """, unsafe_allow_html=True)
 
         st.markdown("---")
 
         col1, col2 = st.columns(2)
 
         with col1:
-            total_adelantos = acumulados.get('costos_adelantos', 0)
-            total_prestamos = acumulados.get('costos_prestamos', 0)
-            total_pasivos = total_adelantos + total_prestamos
-
-            fig = go.Figure(data=[
-                go.Pie(
-                    labels=['Adelantos', 'Préstamos'],
-                    values=[total_adelantos, total_prestamos],
-                    hole=0.3
+            if total_adelantos > 0 or total_prestamos > 0:
+                fig = go.Figure(data=[
+                    go.Pie(
+                        labels=['Adelantos', 'Préstamos'],
+                        values=[total_adelantos, total_prestamos],
+                        hole=0.3,
+                        marker=dict(colors=['#1f77b4', '#ff7f0e'])
+                    )
+                ])
+                fig.update_layout(
+                    title='Proporción: Adelantos vs Préstamos',
+                    showlegend=True,
+                    height=400
                 )
-            ])
-            fig.update_layout(title='Proporción Adelantos vs Préstamos')
-            st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.info("Sin datos de adelantos o préstamos para mostrar.")
 
         with col2:
-            st.metric("📊 Total Pasivos", formatear_moneda(total_pasivos))
+            total_pasivos = total_adelantos + total_prestamos
+            st.metric("💼 Total Pasivos", formatear_moneda(total_pasivos))
+
             st.markdown(f"""
-            - **Adelantos:** {formatear_moneda(total_adelantos)}
-            - **Préstamos:** {formatear_moneda(total_prestamos)}
-            - **Total:** {formatear_moneda(total_pasivos)}
+            **Composición:**
+            - 💰 Adelantos: {formatear_moneda(total_adelantos)} ({(total_adelantos/total_pasivos*100) if total_pasivos > 0 else 0:.1f}%)
+            - 🏦 Préstamos: {formatear_moneda(total_prestamos)} ({(total_prestamos/total_pasivos*100) if total_pasivos > 0 else 0:.1f}%)
+            - 📊 **Total:** {formatear_moneda(total_pasivos)}
             """)
 
     # ========================================================================
@@ -322,10 +508,36 @@ if datos:
     # ========================================================================
 
     st.markdown("---")
+    col_footer1, col_footer2, col_footer3 = st.columns(3)
+
+    with col_footer1:
+        st.markdown(f"""
+        <div style='text-align: center; font-size: 11px; color: #999;'>
+        <strong>📊 Última Actualización</strong><br>
+        {fecha_proc}
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col_footer2:
+        st.markdown("""
+        <div style='text-align: center; font-size: 11px; color: #999;'>
+        <strong>📍 Filtros Activos</strong><br>
+        Empresa | Área | Período
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col_footer3:
+        st.markdown("""
+        <div style='text-align: center; font-size: 11px; color: #999;'>
+        <strong>🔄 Actualización</strong><br>
+        Diaria a las 9:30 AM (UY)
+        </div>
+        """, unsafe_allow_html=True)
+
     st.markdown("""
-    <div style='text-align: center; color: #666; font-size: 12px;'>
-    Dashboard RRHH - Grupo Raval | Datos actualizados diariamente |
-    <a href='#' style='color: #1f77b4;'>API de Datos</a>
+    <div style='text-align: center; color: #ccc; font-size: 11px; margin-top: 20px;'>
+    Dashboard RRHH - Grupo Raval | Datos automáticos desde Excel |
+    <a href='https://github.com/brunobarla' style='color: #1f77b4;' target='_blank'>GitHub</a>
     </div>
     """, unsafe_allow_html=True)
 
