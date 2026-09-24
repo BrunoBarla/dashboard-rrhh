@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Dashboard RRHH Grupo Raval - Streamlit Version
-Tablero interactivo con datos de Recursos Humanos - v2.3 FILTROS CORREGIDOS
+Tablero interactivo con datos de Recursos Humanos - v3.0 FILTROS FUNCIONANDO
 """
 
 import streamlit as st
@@ -106,8 +106,8 @@ def normalizar_area(area_name: str) -> str:
 
 def obtener_datos_filtrados(datos: Dict, empresa: str, area: str, periodo: str) -> Tuple[Dict, Dict]:
     """
-    Filtra los datos según filtros seleccionados.
-    Retorna (datos_metricas, datos_personas_por_empresa)
+    Filtra los datos según combinación de filtros.
+    Maneja 8 casos: (Todas/Específica Empresa) x (Todas/Específica Área) x (Acumulado/Período)
     """
     if not datos:
         return {}, {}
@@ -123,23 +123,37 @@ def obtener_datos_filtrados(datos: Dict, empresa: str, area: str, periodo: str) 
         'personas_por_empresa': {}
     }
 
-    # CASO 1: PERÍODO ACUMULADO (usa estructura acumulados)
+    personas_por_emp = datos.get('acumulados', {}).get('personas_por_empresa', {})
+
+    # ========================================================================
+    # PERÍODO ACUMULADO
+    # ========================================================================
     if periodo == "Acumulado":
         acumulados = datos.get('acumulados', {})
+        areas_data = acumulados.get('areas', {})
 
-        # CASO 1A: Todas las empresas, Todas las áreas
+        # 1. TODAS empresas + TODAS áreas
         if empresa == "Todas" and area == "Todas":
             resultado['costos_nominales'] = acumulados.get('costos_nominales', 0)
             resultado['costos_horas_extras'] = acumulados.get('costos_horas_extras', 0)
             resultado['total_horas_extras_dias'] = acumulados.get('total_horas_extras_dias', 0)
             resultado['costos_adelantos'] = acumulados.get('costos_adelantos', 0)
             resultado['costos_prestamos'] = acumulados.get('costos_prestamos', 0)
-            resultado['personas_por_empresa'] = acumulados.get('personas_por_empresa', {})
+            resultado['personas_por_empresa'] = personas_por_emp
 
-        # CASO 1B: Empresa específica, Todas las áreas
+        # 2. TODAS empresas + Área ESPECÍFICA
+        elif empresa == "Todas" and area != "Todas":
+            for area_key, area_info in areas_data.items():
+                if normalizar_area(area_key) == normalizar_area(area):
+                    resultado['costos_nominales'] += area_info.get('costos_nominales', 0)
+                    resultado['costos_horas_extras'] += area_info.get('costos_horas_extras', 0)
+                    resultado['total_horas_extras_dias'] += area_info.get('total_horas_extras_dias', 0)
+                    resultado['costos_adelantos'] += area_info.get('costos_adelantos', 0)
+                    resultado['costos_prestamos'] += area_info.get('costos_prestamos', 0)
+            resultado['personas_por_empresa'] = personas_por_emp
+
+        # 3. Empresa ESPECÍFICA + TODAS áreas
         elif empresa != "Todas" and area == "Todas":
-            # Sumar datos de TODAS las áreas de esa empresa
-            areas_data = acumulados.get('areas', {})
             for area_key, area_info in areas_data.items():
                 if area_info.get('empresa') == empresa:
                     resultado['costos_nominales'] += area_info.get('costos_nominales', 0)
@@ -148,33 +162,27 @@ def obtener_datos_filtrados(datos: Dict, empresa: str, area: str, periodo: str) 
                     resultado['costos_adelantos'] += area_info.get('costos_adelantos', 0)
                     resultado['costos_prestamos'] += area_info.get('costos_prestamos', 0)
                     resultado['areas'][normalizar_area(area_key)] = area_info
-
-            personas_por_emp = acumulados.get('personas_por_empresa', {})
             resultado['personas_por_empresa'] = {empresa: personas_por_emp.get(empresa, 0)}
 
-        # CASO 1C: Empresa específica, Área específica
-        elif empresa != "Todas" and area != "Todas":
-            # Buscar el área específica en esa empresa
-            areas_data = acumulados.get('areas', {})
+        # 4. Empresa ESPECÍFICA + Área ESPECÍFICA
+        else:
             for area_key, area_info in areas_data.items():
-                # Normalizar para comparación sin discriminar empresa
-                if (area_info.get('empresa') == empresa and
-                    normalizar_area(area_key) == normalizar_area(area)):
+                if (area_info.get('empresa') == empresa and normalizar_area(area_key) == normalizar_area(area)):
                     resultado['costos_nominales'] = area_info.get('costos_nominales', 0)
                     resultado['costos_horas_extras'] = area_info.get('costos_horas_extras', 0)
                     resultado['total_horas_extras_dias'] = area_info.get('total_horas_extras_dias', 0)
                     resultado['costos_adelantos'] = area_info.get('costos_adelantos', 0)
                     resultado['costos_prestamos'] = area_info.get('costos_prestamos', 0)
                     break
-
-            personas_por_emp = acumulados.get('personas_por_empresa', {})
             resultado['personas_por_empresa'] = {empresa: personas_por_emp.get(empresa, 0)}
 
-    # CASO 2: PERÍODO ESPECÍFICO (usa estructura por_periodo)
+    # ========================================================================
+    # PERÍODO ESPECÍFICO
+    # ========================================================================
     else:
         por_periodo = datos.get('por_periodo', {}).get(periodo, {})
 
-        # CASO 2A: Todas las empresas, Todas las áreas
+        # 5. TODAS empresas + TODAS áreas EN ESE PERÍODO
         if empresa == "Todas" and area == "Todas":
             for emp_name, emp_data in por_periodo.items():
                 if isinstance(emp_data, dict):
@@ -185,11 +193,22 @@ def obtener_datos_filtrados(datos: Dict, empresa: str, area: str, periodo: str) 
                             resultado['total_horas_extras_dias'] += area_info.get('total_horas_extras_dias', 0)
                             resultado['costos_adelantos'] += area_info.get('costos_adelantos', 0)
                             resultado['costos_prestamos'] += area_info.get('costos_prestamos', 0)
-
-            personas_por_emp = datos.get('acumulados', {}).get('personas_por_empresa', {})
             resultado['personas_por_empresa'] = personas_por_emp
 
-        # CASO 2B: Empresa específica, Todas las áreas
+        # 6. TODAS empresas + Área ESPECÍFICA EN ESE PERÍODO
+        elif empresa == "Todas" and area != "Todas":
+            for emp_name, emp_data in por_periodo.items():
+                if isinstance(emp_data, dict):
+                    for area_name, area_info in emp_data.items():
+                        if isinstance(area_info, dict) and normalizar_area(area_name) == normalizar_area(area):
+                            resultado['costos_nominales'] += area_info.get('costos_nominales', 0)
+                            resultado['costos_horas_extras'] += area_info.get('costos_horas_extras', 0)
+                            resultado['total_horas_extras_dias'] += area_info.get('total_horas_extras_dias', 0)
+                            resultado['costos_adelantos'] += area_info.get('costos_adelantos', 0)
+                            resultado['costos_prestamos'] += area_info.get('costos_prestamos', 0)
+            resultado['personas_por_empresa'] = personas_por_emp
+
+        # 7. Empresa ESPECÍFICA + TODAS áreas EN ESE PERÍODO
         elif empresa != "Todas" and area == "Todas":
             if empresa in por_periodo:
                 emp_data = por_periodo[empresa]
@@ -200,12 +219,10 @@ def obtener_datos_filtrados(datos: Dict, empresa: str, area: str, periodo: str) 
                         resultado['total_horas_extras_dias'] += area_info.get('total_horas_extras_dias', 0)
                         resultado['costos_adelantos'] += area_info.get('costos_adelantos', 0)
                         resultado['costos_prestamos'] += area_info.get('costos_prestamos', 0)
-
-            personas_por_emp = datos.get('acumulados', {}).get('personas_por_empresa', {})
             resultado['personas_por_empresa'] = {empresa: personas_por_emp.get(empresa, 0)}
 
-        # CASO 2C: Empresa específica, Área específica
-        elif empresa != "Todas" and area != "Todas":
+        # 8. Empresa ESPECÍFICA + Área ESPECÍFICA EN ESE PERÍODO
+        else:
             if empresa in por_periodo:
                 emp_data = por_periodo[empresa]
                 for area_name, area_info in emp_data.items():
@@ -216,8 +233,6 @@ def obtener_datos_filtrados(datos: Dict, empresa: str, area: str, periodo: str) 
                         resultado['costos_adelantos'] = area_info.get('costos_adelantos', 0)
                         resultado['costos_prestamos'] = area_info.get('costos_prestamos', 0)
                         break
-
-            personas_por_emp = datos.get('acumulados', {}).get('personas_por_empresa', {})
             resultado['personas_por_empresa'] = {empresa: personas_por_emp.get(empresa, 0)}
 
     return resultado, resultado.get('personas_por_empresa', {})
@@ -318,13 +333,11 @@ if datos:
 
     datos_filtrados, personas_por_empresa = obtener_datos_filtrados(datos, empresa_sel, area_sel, periodo_sel)
 
-    # Contar personas según filtro - USANDO personas_por_empresa del JSON
+    # Contar personas según filtro
     if empresa_sel == "Todas":
-        # Suma de todas las empresas
         personas_por_emp = datos.get('acumulados', {}).get('personas_por_empresa', {})
         num_personas = sum(personas_por_emp.values())
     else:
-        # Persona específica de la empresa seleccionada
         personas_por_emp = datos.get('acumulados', {}).get('personas_por_empresa', {})
         num_personas = personas_por_emp.get(empresa_sel, 0)
 
@@ -382,21 +395,18 @@ if datos:
 
         st.markdown("---")
 
-        # GRÁFICAS DINÁMICAS - Usando datos_filtrados
+        # GRÁFICAS DINÁMICAS
         col_g1, col_g2 = st.columns(2)
 
         with col_g1:
             if empresa_sel == "Todas":
-                # Gráfico de 3 empresas - USAR datos_filtrados que ya tiene empresas
+                # Gráfico de 3 empresas
                 empresas_data = {}
                 for emp in empresas:
-                    personas_por_emp_dict = datos.get('acumulados', {}).get('personas_por_empresa', {})
                     costo_emp = 0
-                    # Recalcular costo de cada empresa según período
                     if periodo_sel == "Acumulado":
                         costo_emp = datos.get('acumulados', {}).get('empresas', {}).get(emp, {}).get('costos_nominales', 0)
                     else:
-                        # Sumar datos por período
                         periodo_data = datos.get('por_periodo', {}).get(periodo_sel, {}).get(emp, {})
                         for area_data in periodo_data.values():
                             if isinstance(area_data, dict):
@@ -493,7 +503,6 @@ if datos:
 
         st.markdown("---")
 
-        # Gráficas de HE
         col_g1, col_g2 = st.columns(2)
 
         with col_g1:
@@ -535,6 +544,7 @@ if datos:
         adelantos = datos_filtrados.get('costos_adelantos', 0)
         prestamos = datos_filtrados.get('costos_prestamos', 0)
         total_pasivos = adelantos + prestamos
+        costo_nominal = datos_filtrados.get('costos_nominales', 0)
         pct_pasivos = (total_pasivos / costo_nominal * 100) if costo_nominal > 0 else 0
 
         with col1:
@@ -575,7 +585,6 @@ if datos:
 
         st.markdown("---")
 
-        # Gráficas
         col_g1, col_g2 = st.columns(2)
 
         with col_g1:
