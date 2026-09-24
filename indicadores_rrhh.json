@@ -1,1482 +1,181 @@
 {
-  "fecha_procesamiento": "2026-09-24T12:37:04.994177",
-  "version": "2.2",
+  "fecha_procesamiento": "2026-09-24T13:58:46.257913",
+  "version": "3.0 - Desde Recibos",
   "acumulados": {
-    "costos_nominales": 6218375.129999995,
+    "costos_nominales": 41446239.0,
     "costos_horas_extras": 0,
     "total_horas_extras_dias": 0,
-    "costos_adelantos": 0,
-    "costos_prestamos": 0,
+    "costos_adelantos": 4676061.0,
+    "costos_prestamos": 1338408.0,
     "empresas": {
       "PLADES": {
-        "cantidad_personas": 21,
-        "costos_nominales": 1065825.8099999998,
+        "costos_nominales": 7733005.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 1028689.0,
+        "costos_prestamos": 279586.0
       },
       "REMIPLAT": {
-        "cantidad_personas": 113,
-        "costos_nominales": 5138820.599999996,
+        "costos_nominales": 29900674.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 3627005.0,
+        "costos_prestamos": 973622.0
       },
       "VILADOS": {
-        "cantidad_personas": 8,
-        "costos_nominales": 13728.720000000001,
+        "costos_nominales": 3812560.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 20367.0,
+        "costos_prestamos": 85200.0
       }
     },
     "areas": {
       "PLADES - ADMINISTRACIÓN": {
         "empresa": "PLADES",
         "sector": "ADMINISTRACIÓN",
-        "costos_nominales": 388359.1,
+        "costos_nominales": 2328602.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 410689.0,
+        "costos_prestamos": 72500.0
       },
       "PLADES - FABRICA": {
         "empresa": "PLADES",
         "sector": "FABRICA",
-        "costos_nominales": 145259.83,
+        "costos_nominales": 2667214.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 421073.0,
+        "costos_prestamos": 167086.0
       },
       "PLADES - LABORATORIO": {
         "empresa": "PLADES",
         "sector": "LABORATORIO",
-        "costos_nominales": 54532.18,
+        "costos_nominales": 430154.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 0.0,
+        "costos_prestamos": 0.0
       },
       "PLADES - LOGISTICA EMBOLSADO": {
         "empresa": "PLADES",
         "sector": "LOGISTICA EMBOLSADO",
-        "costos_nominales": 237970.8,
+        "costos_nominales": 1774196.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 1365.0,
+        "costos_prestamos": 0.0
       },
       "PLADES - MANTENIMIENTO DE STOCK": {
         "empresa": "PLADES",
         "sector": "MANTENIMIENTO DE STOCK",
-        "costos_nominales": 202318.02000000002,
+        "costos_nominales": 495453.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 195367.0,
+        "costos_prestamos": 40000.0
       },
       "PLADES - MARKETING": {
         "empresa": "PLADES",
         "sector": "MARKETING",
-        "costos_nominales": 37385.88,
+        "costos_nominales": 37386.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 195.0,
+        "costos_prestamos": 0.0
       },
       "REMIPLAT - ADMINISTRACION": {
         "empresa": "REMIPLAT",
         "sector": "ADMINISTRACION",
-        "costos_nominales": 2248522.3600000003,
+        "costos_nominales": 10646582.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 233854.0,
+        "costos_prestamos": 99962.0
       },
       "REMIPLAT - COMERCIAL": {
         "empresa": "REMIPLAT",
         "sector": "COMERCIAL",
-        "costos_nominales": 721113.44,
+        "costos_nominales": 5283203.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
-      },
-      "REMIPLAT - COMERCIAL DOLORES": {
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL DOLORES",
-        "costos_nominales": 1684.31,
-        "costos_horas_extras": 0,
-        "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 927187.0,
+        "costos_prestamos": 34210.0
       },
       "REMIPLAT - DEPOSITO MVDEO.": {
         "empresa": "REMIPLAT",
         "sector": "DEPOSITO MVDEO.",
-        "costos_nominales": 1499.62,
+        "costos_nominales": 0.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 1808.0,
+        "costos_prestamos": 0.0
       },
       "REMIPLAT - FABRICA": {
         "empresa": "REMIPLAT",
         "sector": "FABRICA",
-        "costos_nominales": 739454.0099999998,
+        "costos_nominales": 4981866.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 1352392.0,
+        "costos_prestamos": 344363.0
       },
       "REMIPLAT - LOGISTICA EMBOLSADO": {
         "empresa": "REMIPLAT",
         "sector": "LOGISTICA EMBOLSADO",
-        "costos_nominales": 293962.27,
+        "costos_nominales": 1441392.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 368097.0,
+        "costos_prestamos": 262559.0
       },
       "REMIPLAT - LOGISTICA GRANEL": {
         "empresa": "REMIPLAT",
         "sector": "LOGISTICA GRANEL",
-        "costos_nominales": 102518.43,
+        "costos_nominales": 808680.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 0.0,
+        "costos_prestamos": 0.0
       },
       "REMIPLAT - MANTENIMIENTO DE STOCK": {
         "empresa": "REMIPLAT",
         "sector": "MANTENIMIENTO DE STOCK",
-        "costos_nominales": 465978.96,
+        "costos_nominales": 3357432.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 468850.0,
+        "costos_prestamos": 198528.0
       },
       "REMIPLAT - MARKETING": {
         "empresa": "REMIPLAT",
         "sector": "MARKETING",
-        "costos_nominales": 564087.2000000001,
+        "costos_nominales": 3381519.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 274817.0,
+        "costos_prestamos": 34000.0
       },
       "VILADOS - ADMINISTRACION": {
         "empresa": "VILADOS",
         "sector": "ADMINISTRACION",
-        "costos_nominales": 2916.59,
+        "costos_nominales": 1344954.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
-      },
-      "VILADOS - DIRECCION": {
-        "empresa": "VILADOS",
-        "sector": "DIRECCION",
-        "costos_nominales": 0.0,
-        "costos_horas_extras": 0,
-        "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 7121.0,
+        "costos_prestamos": 17000.0
       },
       "VILADOS - LOGISTICA EMBOLSADO": {
         "empresa": "VILADOS",
         "sector": "LOGISTICA EMBOLSADO",
-        "costos_nominales": 10812.130000000001,
+        "costos_nominales": 2467606.0,
         "costos_horas_extras": 0,
         "total_horas_extras_dias": 0,
-        "costos_adelantos": 0,
-        "costos_prestamos": 0
+        "costos_adelantos": 13246.0,
+        "costos_prestamos": 68200.0
       }
     },
-    "personas": [
-      {
-        "nombre": "Gloria Albavi",
-        "doc": "47756723",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 167606.0,
-        "cargo": "Subgerente de Tesoreria",
-        "ingreso": "2005-09-01T00:00:00"
-      },
-      {
-        "nombre": "Roberto Coronel",
-        "doc": "43480477",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 38734.71,
-        "cargo": "Comercial Sr.",
-        "ingreso": "2007-05-01T00:00:00"
-      },
-      {
-        "nombre": "Santiago Rava",
-        "doc": "44257611",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 346026.8,
-        "cargo": "Gerente General",
-        "ingreso": "2007-08-06T00:00:00"
-      },
-      {
-        "nombre": "Luciana Rava",
-        "doc": "36617699",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 224590.2,
-        "cargo": "Gerente Adm. y Finanzas",
-        "ingreso": "2008-03-06T00:00:00"
-      },
-      {
-        "nombre": "Joaquin Fernandez",
-        "doc": "44767614",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 169789.0,
-        "cargo": "Subgerente Compras y C. Exterior",
-        "ingreso": "2008-07-16T00:00:00"
-      },
-      {
-        "nombre": "Wilson Bozzo",
-        "doc": "35107037",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 2155.4,
-        "cargo": "Chofer pala cargadora",
-        "ingreso": "2009-01-20T00:00:00"
-      },
-      {
-        "nombre": "Juan Fernandez",
-        "doc": "43207289",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 2930.51,
-        "cargo": "Calderista",
-        "ingreso": "2009-01-20T00:00:00"
-      },
-      {
-        "nombre": "Hugo Silva",
-        "doc": "45177105",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 74703.78,
-        "cargo": "Subjefe de Planta",
-        "ingreso": "2009-04-14T00:00:00"
-      },
-      {
-        "nombre": "Roberto Lecuna",
-        "doc": "38194568",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 2351.09,
-        "cargo": "Electricista Cat.II",
-        "ingreso": "2010-01-11T00:00:00"
-      },
-      {
-        "nombre": "Armando Olivera",
-        "doc": "44614449",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 2930.51,
-        "cargo": "Calderista",
-        "ingreso": "2010-12-06T00:00:00"
-      },
-      {
-        "nombre": "German Iriñiz",
-        "doc": "39240946",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 39206.45,
-        "cargo": "Comercial Sr.",
-        "ingreso": "2011-05-02T00:00:00"
-      },
-      {
-        "nombre": "Enrique Barrera",
-        "doc": "36610259",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 51768.84,
-        "cargo": "Auxiliar Expedición",
-        "ingreso": "2011-05-05T00:00:00"
-      },
-      {
-        "nombre": "Maria de los Angeles Anselmi",
-        "doc": "40191679",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 1558.6,
-        "cargo": "Peon Practico",
-        "ingreso": "2011-05-23T00:00:00"
-      },
-      {
-        "nombre": "Eduardo Pages",
-        "doc": "45816840",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 70192.75,
-        "cargo": "Encargado Planta",
-        "ingreso": "2011-05-12T00:00:00"
-      },
-      {
-        "nombre": "Adolfo Rameau",
-        "doc": "26178295",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 47745.21,
-        "cargo": "Prensero",
-        "ingreso": "2011-07-07T00:00:00"
-      },
-      {
-        "nombre": "Rolando Padilla",
-        "doc": "48409587",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 85909.7,
-        "cargo": "Jefe de Planta",
-        "ingreso": "2011-10-17T00:00:00"
-      },
-      {
-        "nombre": "Hector Diaz",
-        "doc": "41973123",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 70192.75,
-        "cargo": "Encargado Planta",
-        "ingreso": "2012-02-07T00:00:00"
-      },
-      {
-        "nombre": "Sebastian Garcia",
-        "doc": "45234175",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 26361.2,
-        "cargo": "Comercial Grandes Animales",
-        "ingreso": "2012-03-26T00:00:00"
-      },
-      {
-        "nombre": "Oscar Conrad",
-        "doc": "27762031",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 75744.32,
-        "cargo": "Chofer",
-        "ingreso": "2012-04-16T00:00:00"
-      },
-      {
-        "nombre": "Carlos Aquino",
-        "doc": "37992662",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA GRANEL",
-        "sueldo": 51039.74,
-        "cargo": "Chofer más de 7.000 Kg.",
-        "ingreso": "2012-06-04T00:00:00"
-      },
-      {
-        "nombre": "Gustavo Besson",
-        "doc": "32319114",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 2194.84,
-        "cargo": "Subencargado",
-        "ingreso": "2012-07-11T00:00:00"
-      },
-      {
-        "nombre": "Matheo Cavallero",
-        "doc": "40785806",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 202885.0,
-        "cargo": "Subgerente Comercial PET",
-        "ingreso": "2012-09-07T00:00:00"
-      },
-      {
-        "nombre": "Walberto Martiniano",
-        "doc": "47266293",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 1773.12,
-        "cargo": "Auxiliar Expedición",
-        "ingreso": "2013-01-18T00:00:00"
-      },
-      {
-        "nombre": "Sofia Rava",
-        "doc": "44257627",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 204302.2,
-        "cargo": "Subgerente de Marketing",
-        "ingreso": "2013-06-03T00:00:00"
-      },
-      {
-        "nombre": "Martin Marin",
-        "doc": "37874026",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 1941.42,
-        "cargo": "Molinero",
-        "ingreso": "2013-06-25T00:00:00"
-      },
-      {
-        "nombre": "Elbio Bitancourt",
-        "doc": "47538395",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 1941.42,
-        "cargo": "Prensero",
-        "ingreso": "2014-02-05T00:00:00"
-      },
-      {
-        "nombre": "Eduardo Bentos",
-        "doc": "53206766",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 1716.16,
-        "cargo": "Subencargado Expedición",
-        "ingreso": "2014-02-05T00:00:00"
-      },
-      {
-        "nombre": "Ruben Martinez",
-        "doc": "42153956",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 1941.42,
-        "cargo": "Nuclero",
-        "ingreso": "2015-03-17T00:00:00"
-      },
-      {
-        "nombre": "Oscar Tarragona",
-        "doc": "41878422",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA GRANEL",
-        "sueldo": 51478.69,
-        "cargo": "Chofer más de 7.000 Kg.",
-        "ingreso": "2015-04-13T00:00:00"
-      },
-      {
-        "nombre": "Dario Chiribao",
-        "doc": "37803639",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1994.96,
-        "cargo": "Chofer",
-        "ingreso": "2015-06-24T00:00:00"
-      },
-      {
-        "nombre": "Sebastian Pons",
-        "doc": "43478636",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 24150.23,
-        "cargo": "Comercial Sr.",
-        "ingreso": "2015-08-06T00:00:00"
-      },
-      {
-        "nombre": "Bruno Rava",
-        "doc": "41021683",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 215769.3,
-        "cargo": "Gerente de Producción",
-        "ingreso": "2015-08-18T00:00:00"
-      },
-      {
-        "nombre": "Juan Gastesi",
-        "doc": "17985132",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 60512.34,
-        "cargo": "Subencargado Expedición",
-        "ingreso": "2015-09-07T00:00:00"
-      },
-      {
-        "nombre": "Nestor Fernandez",
-        "doc": "48304513",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 2155.4,
-        "cargo": "Chofer pala cargadora",
-        "ingreso": "2016-02-15T00:00:00"
-      },
-      {
-        "nombre": "Jorge Montaldo",
-        "doc": "16422749",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 50950.0,
-        "cargo": "Chofer",
-        "ingreso": "2017-03-08T00:00:00"
-      },
-      {
-        "nombre": "Mauricio Arce",
-        "doc": "37603481",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 1782.0,
-        "cargo": "Operario Recepción MP y PT",
-        "ingreso": "2017-10-10T00:00:00"
-      },
-      {
-        "nombre": "Gustavo Perez",
-        "doc": "20186705",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 37726.3,
-        "cargo": "Comercial Sr.",
-        "ingreso": "2018-06-05T00:00:00"
-      },
-      {
-        "nombre": "DAGOMAR CURBELO",
-        "doc": "28661967",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 47723.99,
-        "cargo": "Subencargado Seguridad",
-        "ingreso": "2012-04-19T00:00:00"
-      },
-      {
-        "nombre": "Valeria Arambillete",
-        "doc": "38466262",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 170425.1,
-        "cargo": "Subgerente RRHH",
-        "ingreso": "2018-10-01T00:00:00"
-      },
-      {
-        "nombre": "Nelson Fernandez",
-        "doc": "34244129",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 71220.97,
-        "cargo": "Encargado Expedición",
-        "ingreso": "2019-01-04T00:00:00"
-      },
-      {
-        "nombre": "MILITZA SASSO",
-        "doc": "29208299",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 49326.39,
-        "cargo": "Auxiliar Administrativo",
-        "ingreso": "2021-05-03T00:00:00"
-      },
-      {
-        "nombre": "MATIAS VAZQUEZ VARELA",
-        "doc": "43008665",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 38401.19,
-        "cargo": "Comercial Grandes Animales",
-        "ingreso": "2021-11-01T00:00:00"
-      },
-      {
-        "nombre": "VANESSA RECALDE",
-        "doc": "45668667",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 45395.43,
-        "cargo": "Auxiliar Distribución y Recepción",
-        "ingreso": "2023-06-01T00:00:00"
-      },
-      {
-        "nombre": "YESSICA COSTA",
-        "doc": "36808650",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 37730.82,
-        "cargo": "Comercial Jr.",
-        "ingreso": "2023-07-01T00:00:00"
-      },
-      {
-        "nombre": "MAURICIO REUTOR",
-        "doc": "43516159",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 27497.86,
-        "cargo": "Comercial Grandes Animales",
-        "ingreso": "2023-07-01T00:00:00"
-      },
-      {
-        "nombre": "CESAR SAGASTA",
-        "doc": "46106032",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 1635.38,
-        "cargo": "Operario Recepción MP y PT",
-        "ingreso": "2023-08-01T00:00:00"
-      },
-      {
-        "nombre": "JIMENA MASSA",
-        "doc": "45202128",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 81504.06,
-        "cargo": "Encargada Comunicacion",
-        "ingreso": "2023-09-05T00:00:00"
-      },
-      {
-        "nombre": "FLORENCIA PEÑA",
-        "doc": "49762471",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 42714.76,
-        "cargo": "Comercial Jr.",
-        "ingreso": "2024-01-16T00:00:00"
-      },
-      {
-        "nombre": "FERNANDO SILVEYRA",
-        "doc": "40309509",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 32060.95,
-        "cargo": "Comercial Jr.",
-        "ingreso": "2024-01-25T00:00:00"
-      },
-      {
-        "nombre": "ALEXIS ANDINO",
-        "doc": "45864386",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1753.7,
-        "cargo": "Chofer",
-        "ingreso": "2024-01-29T00:00:00"
-      },
-      {
-        "nombre": "CARLOS SUAREZ",
-        "doc": "57623455",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1879.0,
-        "cargo": "Chofer",
-        "ingreso": "2024-02-19T00:00:00"
-      },
-      {
-        "nombre": "FABIAN GONZALEZ",
-        "doc": "37663683",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 107504.4,
-        "cargo": "Analista Tesoreria Jr.",
-        "ingreso": "2024-04-09T00:00:00"
-      },
-      {
-        "nombre": "DANIEL IBAÑEZ",
-        "doc": "47632371",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 2023.33,
-        "cargo": "Mecanico",
-        "ingreso": "2024-06-06T00:00:00"
-      },
-      {
-        "nombre": "VICTOR PEREYRA",
-        "doc": "44612720",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 32060.95,
-        "cargo": "Comercial Sr.",
-        "ingreso": "2024-06-25T00:00:00"
-      },
-      {
-        "nombre": "JOSEFINA MONTINI",
-        "doc": "49360516",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 92112.34,
-        "cargo": "Jefe Técnico",
-        "ingreso": "2024-07-23T00:00:00"
-      },
-      {
-        "nombre": "CRISTIAN VIDAL",
-        "doc": "51447742",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 69243.09,
-        "cargo": "Subencargado Distribución",
-        "ingreso": "2024-08-01T00:00:00"
-      },
-      {
-        "nombre": "SHAZNAYA IGORRA",
-        "doc": "55026588",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 102613.9,
-        "cargo": "Encargada Marketing",
-        "ingreso": "2024-09-02T00:00:00"
-      },
-      {
-        "nombre": "PABLO GOROSTIAGA",
-        "doc": "49845877",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 1723.25,
-        "cargo": "Chofer",
-        "ingreso": "2024-09-02T00:00:00"
-      },
-      {
-        "nombre": "LUIS RODRIGUEZ",
-        "doc": "33227425",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 1783.18,
-        "cargo": "Molinero",
-        "ingreso": "2024-09-02T00:00:00"
-      },
-      {
-        "nombre": "JORGE RODRIGUEZ",
-        "doc": "40130940",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 129473.1,
-        "cargo": "Jefe Análisis y Control",
-        "ingreso": "2024-10-03T00:00:00"
-      },
-      {
-        "nombre": "ANTONIO RAVA",
-        "doc": "25161425",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 1072.37,
-        "cargo": "Sin Definir",
-        "ingreso": "2024-10-01T00:00:00"
-      },
-      {
-        "nombre": "CHRISTIAN MONTERO",
-        "doc": "47859329",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 1754.0,
-        "cargo": "Operario Expedición",
-        "ingreso": "2024-11-26T00:00:00"
-      },
-      {
-        "nombre": "JONATHAN FERNANDEZ",
-        "doc": "48013748",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 74336.36,
-        "cargo": "Auxiliar Compras y Comercio Exterior",
-        "ingreso": "2024-12-23T00:00:00"
-      },
-      {
-        "nombre": "LUCIA SARAUS",
-        "doc": "55952755",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 41429.43,
-        "cargo": "Auxiliar Merchandising",
-        "ingreso": "2025-01-24T00:00:00"
-      },
-      {
-        "nombre": "MELANY ZUNINO",
-        "doc": "54727541",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 245.57,
-        "cargo": "Promotora",
-        "ingreso": "2025-01-24T00:00:00"
-      },
-      {
-        "nombre": "FABIAN GRAÑA",
-        "doc": "35426916",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1467.47,
-        "cargo": "Auxiliar Expedición",
-        "ingreso": "2025-03-05T00:00:00"
-      },
-      {
-        "nombre": "LUCAS DUQUE",
-        "doc": "55024295",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 41429.0,
-        "cargo": "Auxiliar Merchandising",
-        "ingreso": "2025-04-01T00:00:00"
-      },
-      {
-        "nombre": "AGUSTIN JABIEL",
-        "doc": "48683014",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 30760.28,
-        "cargo": "Vendedores",
-        "ingreso": "2025-04-24T00:00:00"
-      },
-      {
-        "nombre": "RODRIGO ROSMARINO",
-        "doc": "49791987",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 109385.1,
-        "cargo": "Analista Contable Jr.",
-        "ingreso": "2025-05-06T00:00:00"
-      },
-      {
-        "nombre": "DIEGO CANDIOTA",
-        "doc": "52191635",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 41429.0,
-        "cargo": "Comercial Jr.",
-        "ingreso": "2025-06-23T00:00:00"
-      },
-      {
-        "nombre": "MARCOS GANDARA",
-        "doc": "53295941",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1753.7,
-        "cargo": "Chofer",
-        "ingreso": "2025-08-27T00:00:00"
-      },
-      {
-        "nombre": "FRANCO CHOCA",
-        "doc": "49959323",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1753.7,
-        "cargo": "Chofer",
-        "ingreso": "2025-09-08T00:00:00"
-      },
-      {
-        "nombre": "ALEJO TORT",
-        "doc": "53066403",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 72858.5,
-        "cargo": "Analista Contable Jr.",
-        "ingreso": "2025-12-29T00:00:00"
-      },
-      {
-        "nombre": "MARIA DEL CARMEN VIEYTES",
-        "doc": "18216938",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 32484.8,
-        "cargo": "Auxiliar de limpieza",
-        "ingreso": "2026-01-02T00:00:00"
-      },
-      {
-        "nombre": "DANIEL  ATTIAS",
-        "doc": "54298057",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 57064.0,
-        "cargo": "Analista Tesoreria Jr.",
-        "ingreso": "2026-03-09T00:00:00"
-      },
-      {
-        "nombre": "MAITE  DALMAS",
-        "doc": "55292941",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 1648.16,
-        "cargo": "Promotora",
-        "ingreso": "2026-03-23T00:00:00"
-      },
-      {
-        "nombre": "MATEO SANCHEZ",
-        "doc": "53251692",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 1635.38,
-        "cargo": "Chofer",
-        "ingreso": "2026-04-21T00:00:00"
-      },
-      {
-        "nombre": "MARIA  CARAMBULA",
-        "doc": "54426949",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 39064.0,
-        "cargo": "Asistente RRHH",
-        "ingreso": "2026-05-04T00:00:00"
-      },
-      {
-        "nombre": "SABRINA  ALONZO",
-        "doc": "53894977",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 1465.93,
-        "cargo": "Auxiliar de Logística",
-        "ingreso": "2026-06-01T00:00:00"
-      },
-      {
-        "nombre": "SANTIAGO  LOMBA",
-        "doc": "49329203",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 41120.0,
-        "cargo": "Auxiliar Merchandising",
-        "ingreso": "2026-06-08T00:00:00"
-      },
-      {
-        "nombre": "MARIO  CABRAL",
-        "doc": "28086513",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 1465.93,
-        "cargo": "Auxiliar de Logística",
-        "ingreso": "2026-06-09T00:00:00"
-      },
-      {
-        "nombre": "MAICOL  VALDEZ",
-        "doc": "50997081",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 1465.93,
-        "cargo": "Auxiliar de Logística",
-        "ingreso": "2026-06-09T00:00:00"
-      },
-      {
-        "nombre": "MAURO  VILLAMAYOR",
-        "doc": "40275881",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1635.38,
-        "cargo": "Chofer",
-        "ingreso": "2026-06-09T00:00:00"
-      },
-      {
-        "nombre": "THIAGO KARAMANIAN",
-        "doc": "53832880",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 43000.0,
-        "cargo": "Gestor de Cobranzas",
-        "ingreso": "2026-07-01T00:00:00"
-      },
-      {
-        "nombre": "CHRISTOPHER  BURGOS",
-        "doc": "52790558",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1634.52,
-        "cargo": "Chofer",
-        "ingreso": "2026-06-23T00:00:00"
-      },
-      {
-        "nombre": "LUCAS PALOTTI",
-        "doc": "54192619",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1634.52,
-        "cargo": "Chofer",
-        "ingreso": "2026-06-23T00:00:00"
-      },
-      {
-        "nombre": "BRYAN  VEGA",
-        "doc": "52401361",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1634.52,
-        "cargo": "Chofer",
-        "ingreso": "2026-06-23T00:00:00"
-      },
-      {
-        "nombre": "THIAGO VIERA",
-        "doc": "53680689",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 40000.0,
-        "cargo": "Auxiliar Merchandising",
-        "ingreso": "2026-08-03T00:00:00"
-      },
-      {
-        "nombre": "AGUSTIN TOLEDO",
-        "doc": "43208631",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 54000.0,
-        "cargo": "Auxiliar de Distribución",
-        "ingreso": "2026-07-08T00:00:00"
-      },
-      {
-        "nombre": "ANDREINA SILVA",
-        "doc": "49921463",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 50000.0,
-        "cargo": "Auxiliar Compras",
-        "ingreso": "2026-07-10T00:00:00"
-      },
-      {
-        "nombre": "ALVARO  SAAVEDRA",
-        "doc": "45825316",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 1590.84,
-        "cargo": "Operario Expedición",
-        "ingreso": "2026-07-14T00:00:00"
-      },
-      {
-        "nombre": "DAMIAN RIVERO",
-        "doc": "58615649",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1634.52,
-        "cargo": "Chofer",
-        "ingreso": "2026-08-11T00:00:00"
-      },
-      {
-        "nombre": "FABRICIO RODRIGUEZ",
-        "doc": "46875908",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1634.52,
-        "cargo": "Chofer",
-        "ingreso": "2026-08-26T00:00:00"
-      },
-      {
-        "nombre": "GASTON RIVERO",
-        "doc": "50725624",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1634.0,
-        "cargo": "Operario Expedición",
-        "ingreso": "2026-09-01T00:00:00"
-      },
-      {
-        "nombre": "MARCELO FERNANDEZ",
-        "doc": "46931225",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1721.0,
-        "cargo": "Auxiliar de Distribución",
-        "ingreso": "2026-09-01T00:00:00"
-      },
-      {
-        "nombre": "MELISA NOBLIA",
-        "doc": "55743843",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 200.38,
-        "cargo": "Promotora",
-        "ingreso": "2026-09-02T00:00:00"
-      },
-      {
-        "nombre": "MIKAELA  RODRIGUEZ",
-        "doc": "55900451",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 200.38,
-        "cargo": "Promotora",
-        "ingreso": "2026-09-09T00:00:00"
-      },
-      {
-        "nombre": "LUCAS CENTENA",
-        "doc": "50438485",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1634.0,
-        "cargo": "Operario Expedición",
-        "ingreso": "2026-09-11T00:00:00"
-      },
-      {
-        "nombre": "Santiago Rava",
-        "doc": "44257611",
-        "empresa": "PLADES",
-        "sector": "ADMINISTRACIÓN",
-        "sueldo": 0,
-        "cargo": "Director",
-        "ingreso": "2014-09-25T00:00:00"
-      },
-      {
-        "nombre": "Agustin Guerra",
-        "doc": "49888746",
-        "empresa": "PLADES",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 77688.02,
-        "cargo": "Encargado recepción",
-        "ingreso": "2017-03-23T00:00:00"
-      },
-      {
-        "nombre": "Carolina Rey",
-        "doc": "49872993",
-        "empresa": "PLADES",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 55655.35,
-        "cargo": "Auxiliar Recepción MP y PT",
-        "ingreso": "2018-09-03T00:00:00"
-      },
-      {
-        "nombre": "Renzo Rava",
-        "doc": "39404267",
-        "empresa": "PLADES",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 180594.4,
-        "cargo": "Subgerente Operaciones",
-        "ingreso": "2019-03-06T00:00:00"
-      },
-      {
-        "nombre": "IGNACIO LACURCIA",
-        "doc": "49656187",
-        "empresa": "PLADES",
-        "sector": "ADMINISTRACIÓN",
-        "sueldo": 136371.1,
-        "cargo": "Analista Sistemas Sr.",
-        "ingreso": "2022-04-19T00:00:00"
-      },
-      {
-        "nombre": "SOFIA ALFARO",
-        "doc": "45807625",
-        "empresa": "PLADES",
-        "sector": "ADMINISTRACIÓN",
-        "sueldo": 101988.0,
-        "cargo": "Analista de Crédito Sr.",
-        "ingreso": "2022-10-20T00:00:00"
-      },
-      {
-        "nombre": "GABRIEL OSORIO",
-        "doc": "45330892",
-        "empresa": "PLADES",
-        "sector": "FABRICA",
-        "sueldo": 129859.7,
-        "cargo": "Jefe de Planta PET",
-        "ingreso": "2022-11-14T00:00:00"
-      },
-      {
-        "nombre": "FACUNDO MEDEROS",
-        "doc": "55409300",
-        "empresa": "PLADES",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 65552.0,
-        "cargo": "Encargado Análisis y Control",
-        "ingreso": "2022-12-08T00:00:00"
-      },
-      {
-        "nombre": "RUBEN ORTIZ",
-        "doc": "51872545",
-        "empresa": "PLADES",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1721.05,
-        "cargo": "Chofer",
-        "ingreso": "2023-04-12T00:00:00"
-      },
-      {
-        "nombre": "MAURICIO MARTINEZ",
-        "doc": "47442154",
-        "empresa": "PLADES",
-        "sector": "FABRICA",
-        "sueldo": 2305.79,
-        "cargo": "Foguista",
-        "ingreso": "2023-06-12T00:00:00"
-      },
-      {
-        "nombre": "JONHATAN  GUARINO",
-        "doc": "49882372",
-        "empresa": "PLADES",
-        "sector": "FABRICA",
-        "sueldo": 2305.79,
-        "cargo": "Maquinista CAT. II",
-        "ingreso": "2024-05-06T00:00:00"
-      },
-      {
-        "nombre": "RICHAIR ROMERO",
-        "doc": "42741264",
-        "empresa": "PLADES",
-        "sector": "FABRICA",
-        "sueldo": 2457.83,
-        "cargo": "Auxiliar Mecánico",
-        "ingreso": "2024-09-13T00:00:00"
-      },
-      {
-        "nombre": "SEBASTIAN MARTINEZ",
-        "doc": "55218559",
-        "empresa": "PLADES",
-        "sector": "FABRICA",
-        "sueldo": 1813.57,
-        "cargo": "Operario de producción Cat. II",
-        "ingreso": "2025-03-10T00:00:00"
-      },
-      {
-        "nombre": "WALTER GUTIERREZ",
-        "doc": "43453185",
-        "empresa": "PLADES",
-        "sector": "FABRICA",
-        "sueldo": 1635.38,
-        "cargo": "Auxiliar de Producción",
-        "ingreso": "2025-04-23T00:00:00"
-      },
-      {
-        "nombre": "GASTON  MOROSINI",
-        "doc": "50414875",
-        "empresa": "PLADES",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 59078.0,
-        "cargo": "Auxiliar de Logística",
-        "ingreso": "2025-04-07T00:00:00"
-      },
-      {
-        "nombre": "BERNARDINA LEONARDI",
-        "doc": "51517466",
-        "empresa": "PLADES",
-        "sector": "LABORATORIO",
-        "sueldo": 54532.18,
-        "cargo": "Analista de Laboratorio",
-        "ingreso": "2025-06-02T00:00:00"
-      },
-      {
-        "nombre": "MARIA MORALES",
-        "doc": "46433013",
-        "empresa": "PLADES",
-        "sector": "FABRICA",
-        "sueldo": 1466.74,
-        "cargo": "Auxiliar embolsado",
-        "ingreso": "2026-02-02T00:00:00"
-      },
-      {
-        "nombre": "LUIS GONZALEZ",
-        "doc": "47555929",
-        "empresa": "PLADES",
-        "sector": "FABRICA",
-        "sueldo": 1635.38,
-        "cargo": "Auxiliar de Producción",
-        "ingreso": "2026-06-01T00:00:00"
-      },
-      {
-        "nombre": "BRUNO BARLA",
-        "doc": "46878063",
-        "empresa": "PLADES",
-        "sector": "ADMINISTRACIÓN",
-        "sueldo": 150000.0,
-        "cargo": "Jefe de RRHH",
-        "ingreso": "2026-09-14T00:00:00"
-      },
-      {
-        "nombre": "WALDIMIRO RAVA",
-        "doc": "26597289",
-        "empresa": "VILADOS",
-        "sector": "DIRECCION",
-        "sueldo": 0,
-        "cargo": "DIRECTOR",
-        "ingreso": "2021-07-19T00:00:00"
-      },
-      {
-        "nombre": "SANTIAGO RAVA",
-        "doc": "44257611",
-        "empresa": "VILADOS",
-        "sector": "ADMINISTRACION",
-        "sueldo": 2916.59,
-        "cargo": "Jefe Técnico",
-        "ingreso": "2021-10-15T00:00:00"
-      },
-      {
-        "nombre": "GONZALO YAURRECHY",
-        "doc": "37775103",
-        "empresa": "VILADOS",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1887.49,
-        "cargo": "Chofer",
-        "ingreso": "2021-10-15T00:00:00"
-      },
-      {
-        "nombre": "DIEGO SILVA",
-        "doc": "54164179",
-        "empresa": "VILADOS",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1769.26,
-        "cargo": "Chofer",
-        "ingreso": "2022-05-31T00:00:00"
-      },
-      {
-        "nombre": "DIEGO  DIANESSI",
-        "doc": "47936561",
-        "empresa": "VILADOS",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1769.26,
-        "cargo": "Chofer",
-        "ingreso": "2026-02-23T00:00:00"
-      },
-      {
-        "nombre": "MARTIN VELAZQUEZ",
-        "doc": "56429147",
-        "empresa": "VILADOS",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1769.26,
-        "cargo": "Chofer",
-        "ingreso": "2026-04-28T00:00:00"
-      },
-      {
-        "nombre": "Maria Furtado",
-        "doc": "19136648",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 94530.1,
-        "cargo": "Auxiliar Compras",
-        "ingreso": "2007-01-18T00:00:00"
-      },
-      {
-        "nombre": "Raul Gasco",
-        "doc": "28236556",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 1725.21,
-        "cargo": "Auxiliar Expedición",
-        "ingreso": "2009-03-13T00:00:00"
-      },
-      {
-        "nombre": "Andrea Dominguez",
-        "doc": "31288663",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL",
-        "sueldo": 27964.74,
-        "cargo": "Comercial Jr.",
-        "ingreso": "2009-10-01T00:00:00"
-      },
-      {
-        "nombre": "Michael Farias",
-        "doc": "46326612",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 2103.32,
-        "cargo": "Mezclador",
-        "ingreso": "2016-11-21T00:00:00"
-      },
-      {
-        "nombre": "Mathias Parra",
-        "doc": "46320561",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 222965.1,
-        "cargo": "Subgerente Área Administración",
-        "ingreso": "2018-06-04T00:00:00"
-      },
-      {
-        "nombre": "Valeria Arambillete",
-        "doc": "38466262",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 170425.1,
-        "cargo": "Subgerente RRHH",
-        "ingreso": "2018-10-01T00:00:00"
-      },
-      {
-        "nombre": "JULIO RAMOS",
-        "doc": "51608378",
-        "empresa": "REMIPLAT",
-        "sector": "FABRICA",
-        "sueldo": 2051.94,
-        "cargo": "Mezclador",
-        "ingreso": "2021-07-01T00:00:00"
-      },
-      {
-        "nombre": "SEBASTIAN MOITIÑO",
-        "doc": "52169177",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 67952.27,
-        "cargo": "Subencargado Distribución",
-        "ingreso": "2023-06-01T00:00:00"
-      },
-      {
-        "nombre": "FLORENCIA ARAMBILLETE",
-        "doc": "47755309",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 50587.69,
-        "cargo": "Encargado de Deposito",
-        "ingreso": "2024-04-09T00:00:00"
-      },
-      {
-        "nombre": "MICHAEL ULTRA",
-        "doc": "49897438",
-        "empresa": "REMIPLAT",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1623.08,
-        "cargo": "Chofer más de 7.000 Kg.",
-        "ingreso": "2024-06-07T00:00:00"
-      },
-      {
-        "nombre": "EDUARDO PIOVANO",
-        "doc": "40691704",
-        "empresa": "REMIPLAT",
-        "sector": "COMERCIAL DOLORES",
-        "sueldo": 1684.31,
-        "cargo": "Subencargado Expedición",
-        "ingreso": "2024-11-14T00:00:00"
-      },
-      {
-        "nombre": "AGUSTIN RIAL",
-        "doc": "50284468",
-        "empresa": "REMIPLAT",
-        "sector": "DEPOSITO MVDEO.",
-        "sueldo": 1499.62,
-        "cargo": "Chofer",
-        "ingreso": "2025-06-04T00:00:00"
-      },
-      {
-        "nombre": "ANA MACHADO",
-        "doc": "57200324",
-        "empresa": "REMIPLAT",
-        "sector": "MARKETING",
-        "sueldo": 235.43,
-        "cargo": "Promotora",
-        "ingreso": "2025-11-19T00:00:00"
-      },
-      {
-        "nombre": "MARIA ROMERO",
-        "doc": "43839125",
-        "empresa": "REMIPLAT",
-        "sector": "ADMINISTRACION",
-        "sueldo": 50000.0,
-        "cargo": "Auxiliar Compras",
-        "ingreso": "2025-12-08T00:00:00"
-      },
-      {
-        "nombre": "YAMILA CASTRO",
-        "doc": "45986956",
-        "empresa": "REMIPLAT",
-        "sector": "MANTENIMIENTO DE STOCK",
-        "sueldo": 38036.0,
-        "cargo": "Auxiliar Acond. y Prod.",
-        "ingreso": "2025-12-29T00:00:00"
-      },
-      {
-        "nombre": "ALANIS GARCIA",
-        "doc": "49618280",
-        "empresa": "PLADES",
-        "sector": "MARKETING",
-        "sueldo": 37385.88,
-        "cargo": "Aux. Marketing",
-        "ingreso": "2022-05-24T00:00:00"
-      },
-      {
-        "nombre": "DIEGO GONZALEZ",
-        "doc": "45836250",
-        "empresa": "PLADES",
-        "sector": "FABRICA",
-        "sueldo": 1779.65,
-        "cargo": "Operario de producción Cat. II",
-        "ingreso": "2024-07-15T00:00:00"
-      },
-      {
-        "nombre": "LUIS FIGUEROA",
-        "doc": "51379117",
-        "empresa": "VILADOS",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1895.79,
-        "cargo": "Chofer",
-        "ingreso": "2022-01-24T00:00:00"
-      },
-      {
-        "nombre": "DIEGO MARTINEZ",
-        "doc": "50755526",
-        "empresa": "VILADOS",
-        "sector": "LOGISTICA EMBOLSADO",
-        "sueldo": 1721.07,
-        "cargo": "Chofer",
-        "ingreso": "2026-02-26T00:00:00"
-      }
-    ],
     "personas_por_empresa": {
       "PLADES": 21,
       "REMIPLAT": 113,
@@ -1487,1208 +186,884 @@
     "2026-01": {
       "PLADES": {
         "ADMINISTRACIÓN": {
-          "costos_nominales": 388359.1,
+          "costos_nominales": 284715.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 50464.0,
+          "costos_prestamos": 9000.0
         },
         "FABRICA": {
-          "costos_nominales": 145259.83,
+          "costos_nominales": 331741.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 55965.0,
+          "costos_prestamos": 11709.0
         },
         "LABORATORIO": {
-          "costos_nominales": 54532.18,
+          "costos_nominales": 53515.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 237970.8,
+          "costos_nominales": 220836.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 202318.02000000002,
+          "costos_nominales": 55068.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 4178.0,
+          "costos_prestamos": 5000.0
         },
         "MARKETING": {
-          "costos_nominales": 37385.88,
+          "costos_nominales": 37386.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 195.0,
+          "costos_prestamos": 0.0
         }
       },
       "REMIPLAT": {
         "ADMINISTRACION": {
-          "costos_nominales": 2248522.3600000003,
+          "costos_nominales": 1309854.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 6233.0,
+          "costos_prestamos": 12033.0
         },
         "COMERCIAL": {
-          "costos_nominales": 721113.44,
+          "costos_nominales": 667057.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "COMERCIAL DOLORES": {
-          "costos_nominales": 1684.31,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 105710.0,
+          "costos_prestamos": 11460.0
         },
         "DEPOSITO MVDEO.": {
-          "costos_nominales": 1499.62,
+          "costos_nominales": 0.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 1808.0,
+          "costos_prestamos": 0.0
         },
         "FABRICA": {
-          "costos_nominales": 739454.0099999998,
+          "costos_nominales": 619895.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 168393.0,
+          "costos_prestamos": 51501.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 293962.27,
+          "costos_nominales": 205522.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 39261.0,
+          "costos_prestamos": 31667.0
         },
         "LOGISTICA GRANEL": {
-          "costos_nominales": 102518.43,
+          "costos_nominales": 100607.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 465978.96,
+          "costos_nominales": 390170.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 48028.0,
+          "costos_prestamos": 16000.0
         },
         "MARKETING": {
-          "costos_nominales": 564087.2000000001,
+          "costos_nominales": 408603.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 27326.0,
+          "costos_prestamos": 7000.0
         }
       },
       "VILADOS": {
         "ADMINISTRACION": {
-          "costos_nominales": 2916.59,
+          "costos_nominales": 167318.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DIRECCION": {
-          "costos_nominales": 0.0,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 10812.130000000001,
+          "costos_nominales": 307667.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 6000.0
         }
       }
     },
     "2026-02": {
       "PLADES": {
         "ADMINISTRACIÓN": {
-          "costos_nominales": 388359.1,
+          "costos_nominales": 284715.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 51071.0,
+          "costos_prestamos": 9000.0
         },
         "FABRICA": {
-          "costos_nominales": 145259.83,
+          "costos_nominales": 331741.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 55869.0,
+          "costos_prestamos": 21709.0
         },
         "LABORATORIO": {
-          "costos_nominales": 54532.18,
+          "costos_nominales": 53515.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 237970.8,
+          "costos_nominales": 220836.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 202318.02000000002,
+          "costos_nominales": 55068.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "MARKETING": {
-          "costos_nominales": 37385.88,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 27759.0,
+          "costos_prestamos": 5000.0
         }
       },
       "REMIPLAT": {
         "ADMINISTRACION": {
-          "costos_nominales": 2248522.3600000003,
+          "costos_nominales": 1309854.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 3391.0,
+          "costos_prestamos": 6866.0
         },
         "COMERCIAL": {
-          "costos_nominales": 721113.44,
+          "costos_nominales": 667057.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "COMERCIAL DOLORES": {
-          "costos_nominales": 1684.31,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DEPOSITO MVDEO.": {
-          "costos_nominales": 1499.62,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 104693.0,
+          "costos_prestamos": 3750.0
         },
         "FABRICA": {
-          "costos_nominales": 739454.0099999998,
+          "costos_nominales": 619895.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 194349.0,
+          "costos_prestamos": 47334.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 293962.27,
+          "costos_nominales": 205522.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 42813.0,
+          "costos_prestamos": 35711.0
         },
         "LOGISTICA GRANEL": {
-          "costos_nominales": 102518.43,
+          "costos_nominales": 100607.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 465978.96,
+          "costos_nominales": 441099.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 49518.0,
+          "costos_prestamos": 19194.0
         },
         "MARKETING": {
-          "costos_nominales": 564087.2000000001,
+          "costos_nominales": 358015.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 27977.0,
+          "costos_prestamos": 7000.0
         }
       },
       "VILADOS": {
         "ADMINISTRACION": {
-          "costos_nominales": 2916.59,
+          "costos_nominales": 167318.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DIRECCION": {
-          "costos_nominales": 0.0,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 10812.130000000001,
+          "costos_nominales": 307667.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 12550.0
         }
       }
     },
     "2026-03": {
       "PLADES": {
         "ADMINISTRACIÓN": {
-          "costos_nominales": 388359.1,
+          "costos_nominales": 284715.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 51082.0,
+          "costos_prestamos": 9000.0
         },
         "FABRICA": {
-          "costos_nominales": 145259.83,
+          "costos_nominales": 331741.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 50650.0,
+          "costos_prestamos": 30249.0
         },
         "LABORATORIO": {
-          "costos_nominales": 54532.18,
+          "costos_nominales": 53515.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 237970.8,
+          "costos_nominales": 220836.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 202318.02000000002,
+          "costos_nominales": 63953.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "MARKETING": {
-          "costos_nominales": 37385.88,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 19686.0,
+          "costos_prestamos": 5000.0
         }
       },
       "REMIPLAT": {
         "ADMINISTRACION": {
-          "costos_nominales": 2248522.3600000003,
+          "costos_nominales": 1365854.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 67670.0,
+          "costos_prestamos": 6033.0
         },
         "COMERCIAL": {
-          "costos_nominales": 721113.44,
+          "costos_nominales": 667057.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "COMERCIAL DOLORES": {
-          "costos_nominales": 1684.31,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DEPOSITO MVDEO.": {
-          "costos_nominales": 1499.62,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 106510.0,
+          "costos_prestamos": 3750.0
         },
         "FABRICA": {
-          "costos_nominales": 739454.0099999998,
+          "costos_nominales": 619895.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 190103.0,
+          "costos_prestamos": 68001.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 293962.27,
+          "costos_nominales": 205522.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 44983.0,
+          "costos_prestamos": 39669.0
         },
         "LOGISTICA GRANEL": {
-          "costos_nominales": 102518.43,
+          "costos_nominales": 100607.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 465978.96,
+          "costos_nominales": 334881.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 58053.0,
+          "costos_prestamos": 57864.0
         },
         "MARKETING": {
-          "costos_nominales": 564087.2000000001,
+          "costos_nominales": 358015.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 30175.0,
+          "costos_prestamos": 0.0
         }
       },
       "VILADOS": {
         "ADMINISTRACION": {
-          "costos_nominales": 2916.59,
+          "costos_nominales": 167318.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DIRECCION": {
-          "costos_nominales": 0.0,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 10812.130000000001,
+          "costos_nominales": 307667.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 12550.0
         }
       }
     },
     "2026-04": {
       "PLADES": {
         "ADMINISTRACIÓN": {
-          "costos_nominales": 388359.1,
+          "costos_nominales": 284715.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 47537.0,
+          "costos_prestamos": 9000.0
         },
         "FABRICA": {
-          "costos_nominales": 145259.83,
+          "costos_nominales": 331741.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 44180.0,
+          "costos_prestamos": 30249.0
         },
         "LABORATORIO": {
-          "costos_nominales": 54532.18,
+          "costos_nominales": 53515.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 237970.8,
+          "costos_nominales": 220836.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 1100.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 202318.02000000002,
+          "costos_nominales": 63953.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "MARKETING": {
-          "costos_nominales": 37385.88,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 26009.0,
+          "costos_prestamos": 5000.0
         }
       },
       "REMIPLAT": {
         "ADMINISTRACION": {
-          "costos_nominales": 2248522.3600000003,
+          "costos_nominales": 1271324.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 20764.0,
+          "costos_prestamos": 12533.0
         },
         "COMERCIAL": {
-          "costos_nominales": 721113.44,
+          "costos_nominales": 667057.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "COMERCIAL DOLORES": {
-          "costos_nominales": 1684.31,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DEPOSITO MVDEO.": {
-          "costos_nominales": 1499.62,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 103093.0,
+          "costos_prestamos": 1250.0
         },
         "FABRICA": {
-          "costos_nominales": 739454.0099999998,
+          "costos_nominales": 619895.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 167963.0,
+          "costos_prestamos": 49501.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 293962.27,
+          "costos_nominales": 142284.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 47083.0,
+          "costos_prestamos": 44669.0
         },
         "LOGISTICA GRANEL": {
-          "costos_nominales": 102518.43,
+          "costos_nominales": 100607.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 465978.96,
+          "costos_nominales": 394265.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 71830.0,
+          "costos_prestamos": 17027.0
         },
         "MARKETING": {
-          "costos_nominales": 564087.2000000001,
+          "costos_nominales": 398316.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 30811.0,
+          "costos_prestamos": 7000.0
         }
       },
       "VILADOS": {
         "ADMINISTRACION": {
-          "costos_nominales": 2916.59,
+          "costos_nominales": 167318.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DIRECCION": {
-          "costos_nominales": 0.0,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 10812.130000000001,
+          "costos_nominales": 307667.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 3312.0,
+          "costos_prestamos": 12550.0
         }
       }
     },
     "2026-05": {
       "PLADES": {
         "ADMINISTRACIÓN": {
-          "costos_nominales": 388359.1,
+          "costos_nominales": 284715.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 48357.0,
+          "costos_prestamos": 9000.0
         },
         "FABRICA": {
-          "costos_nominales": 145259.83,
+          "costos_nominales": 331741.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 62585.0,
+          "costos_prestamos": 19709.0
         },
         "LABORATORIO": {
-          "costos_nominales": 54532.18,
+          "costos_nominales": 53515.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 237970.8,
+          "costos_nominales": 220836.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 202318.02000000002,
+          "costos_nominales": 63953.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "MARKETING": {
-          "costos_nominales": 37385.88,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 21575.0,
+          "costos_prestamos": 5000.0
         }
       },
       "REMIPLAT": {
         "ADMINISTRACION": {
-          "costos_nominales": 2248522.3600000003,
+          "costos_nominales": 1309324.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 19041.0,
+          "costos_prestamos": 14200.0
         },
         "COMERCIAL": {
-          "costos_nominales": 721113.44,
+          "costos_nominales": 667057.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "COMERCIAL DOLORES": {
-          "costos_nominales": 1684.31,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DEPOSITO MVDEO.": {
-          "costos_nominales": 1499.62,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 108505.0,
+          "costos_prestamos": 5000.0
         },
         "FABRICA": {
-          "costos_nominales": 739454.0099999998,
+          "costos_nominales": 619895.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 161041.0,
+          "costos_prestamos": 44501.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 293962.27,
+          "costos_nominales": 142284.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 39323.0,
+          "costos_prestamos": 49337.0
         },
         "LOGISTICA GRANEL": {
-          "costos_nominales": 102518.43,
+          "costos_nominales": 100607.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 465978.96,
+          "costos_nominales": 394265.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 54036.0,
+          "costos_prestamos": 18694.0
         },
         "MARKETING": {
-          "costos_nominales": 564087.2000000001,
+          "costos_nominales": 398316.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 30311.0,
+          "costos_prestamos": 0.0
         }
       },
       "VILADOS": {
         "ADMINISTRACION": {
-          "costos_nominales": 2916.59,
+          "costos_nominales": 167318.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DIRECCION": {
-          "costos_nominales": 0.0,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 2839.0,
+          "costos_prestamos": 6000.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 10812.130000000001,
+          "costos_nominales": 307667.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 3311.0,
+          "costos_prestamos": 12550.0
         }
       }
     },
     "2026-06": {
       "PLADES": {
         "ADMINISTRACIÓN": {
-          "costos_nominales": 388359.1,
+          "costos_nominales": 284715.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 60834.0,
+          "costos_prestamos": 9000.0
         },
         "FABRICA": {
-          "costos_nominales": 145259.83,
+          "costos_nominales": 331741.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 59485.0,
+          "costos_prestamos": 19709.0
         },
         "LABORATORIO": {
-          "costos_nominales": 54532.18,
+          "costos_nominales": 53515.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 237970.8,
+          "costos_nominales": 220836.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 66.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 202318.02000000002,
+          "costos_nominales": 63953.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "MARKETING": {
-          "costos_nominales": 37385.88,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 45543.0,
+          "costos_prestamos": 5000.0
         }
       },
       "REMIPLAT": {
         "ADMINISTRACION": {
-          "costos_nominales": 2248522.3600000003,
+          "costos_nominales": 1309324.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 42959.0,
+          "costos_prestamos": 20003.0
         },
         "COMERCIAL": {
-          "costos_nominales": 721113.44,
+          "costos_nominales": 639092.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "COMERCIAL DOLORES": {
-          "costos_nominales": 1684.31,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DEPOSITO MVDEO.": {
-          "costos_nominales": 1499.62,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 177373.0,
+          "costos_prestamos": 3000.0
         },
         "FABRICA": {
-          "costos_nominales": 739454.0099999998,
+          "costos_nominales": 619895.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 164175.0,
+          "costos_prestamos": 31167.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 293962.27,
+          "costos_nominales": 142284.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 63788.0,
+          "costos_prestamos": 20502.0
         },
         "LOGISTICA GRANEL": {
-          "costos_nominales": 102518.43,
+          "costos_nominales": 100607.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 465978.96,
+          "costos_nominales": 441099.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 68130.0,
+          "costos_prestamos": 20194.0
         },
         "MARKETING": {
-          "costos_nominales": 564087.2000000001,
+          "costos_nominales": 438316.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 67284.0,
+          "costos_prestamos": 6500.0
         }
       },
       "VILADOS": {
         "ADMINISTRACION": {
-          "costos_nominales": 2916.59,
+          "costos_nominales": 167318.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DIRECCION": {
-          "costos_nominales": 0.0,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 146.0,
+          "costos_prestamos": 6000.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 10812.130000000001,
+          "costos_nominales": 307667.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 4074.0,
+          "costos_prestamos": 6000.0
         }
       }
     },
     "2026-07": {
       "PLADES": {
         "ADMINISTRACIÓN": {
-          "costos_nominales": 388359.1,
+          "costos_nominales": 307249.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 51896.0,
+          "costos_prestamos": 9000.0
         },
         "FABRICA": {
-          "costos_nominales": 145259.83,
+          "costos_nominales": 338384.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 47858.0,
+          "costos_prestamos": 16876.0
         },
         "LABORATORIO": {
-          "costos_nominales": 54532.18,
+          "costos_nominales": 54532.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 237970.8,
+          "costos_nominales": 224590.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 199.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 202318.02000000002,
+          "costos_nominales": 63953.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "MARKETING": {
-          "costos_nominales": 37385.88,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 23545.0,
+          "costos_prestamos": 5000.0
         }
       },
       "REMIPLAT": {
         "ADMINISTRACION": {
-          "costos_nominales": 2248522.3600000003,
+          "costos_nominales": 1411794.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 19667.0,
+          "costos_prestamos": 12712.0
         },
         "COMERCIAL": {
-          "costos_nominales": 721113.44,
+          "costos_nominales": 654413.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "COMERCIAL DOLORES": {
-          "costos_nominales": 1684.31,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DEPOSITO MVDEO.": {
-          "costos_nominales": 1499.62,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 109927.0,
+          "costos_prestamos": 3000.0
         },
         "FABRICA": {
-          "costos_nominales": 739454.0099999998,
+          "costos_nominales": 631248.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 144705.0,
+          "costos_prestamos": 26167.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 293962.27,
+          "costos_nominales": 198987.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 49697.0,
+          "costos_prestamos": 20502.0
         },
         "LOGISTICA GRANEL": {
-          "costos_nominales": 102518.43,
+          "costos_nominales": 102519.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 465978.96,
+          "costos_nominales": 500614.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 60102.0,
+          "costos_prestamos": 23361.0
         },
         "MARKETING": {
-          "costos_nominales": 564087.2000000001,
+          "costos_nominales": 470969.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 30488.0,
+          "costos_prestamos": 6500.0
         }
       },
       "VILADOS": {
         "ADMINISTRACION": {
-          "costos_nominales": 2916.59,
+          "costos_nominales": 170523.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DIRECCION": {
-          "costos_nominales": 0.0,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 2611.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 10812.130000000001,
+          "costos_nominales": 307667.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 2549.0,
+          "costos_prestamos": 6000.0
         }
       }
     },
     "2026-08": {
       "PLADES": {
         "ADMINISTRACIÓN": {
-          "costos_nominales": 388359.1,
+          "costos_nominales": 313063.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 49448.0,
+          "costos_prestamos": 9500.0
         },
         "FABRICA": {
-          "costos_nominales": 145259.83,
+          "costos_nominales": 338384.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 44481.0,
+          "costos_prestamos": 16876.0
         },
         "LABORATORIO": {
-          "costos_nominales": 54532.18,
+          "costos_nominales": 54532.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 237970.8,
+          "costos_nominales": 224590.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 202318.02000000002,
+          "costos_nominales": 65552.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "MARKETING": {
-          "costos_nominales": 37385.88,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 27072.0,
+          "costos_prestamos": 5000.0
         }
       },
       "REMIPLAT": {
         "ADMINISTRACION": {
-          "costos_nominales": 2248522.3600000003,
+          "costos_nominales": 1188829.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 54129.0,
+          "costos_prestamos": 15582.0
         },
         "COMERCIAL": {
-          "costos_nominales": 721113.44,
+          "costos_nominales": 654413.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "COMERCIAL DOLORES": {
-          "costos_nominales": 1684.31,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DEPOSITO MVDEO.": {
-          "costos_nominales": 1499.62,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 111376.0,
+          "costos_prestamos": 3000.0
         },
         "FABRICA": {
-          "costos_nominales": 739454.0099999998,
+          "costos_nominales": 631248.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 161663.0,
+          "costos_prestamos": 26191.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 293962.27,
+          "costos_nominales": 198987.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 41149.0,
+          "costos_prestamos": 20502.0
         },
         "LOGISTICA GRANEL": {
-          "costos_nominales": 102518.43,
+          "costos_nominales": 102519.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 465978.96,
+          "costos_nominales": 461039.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 59153.0,
+          "costos_prestamos": 26194.0
         },
         "MARKETING": {
-          "costos_nominales": 564087.2000000001,
+          "costos_nominales": 510969.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 30445.0,
+          "costos_prestamos": 0.0
         }
       },
       "VILADOS": {
         "ADMINISTRACION": {
-          "costos_nominales": 2916.59,
+          "costos_nominales": 170523.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DIRECCION": {
-          "costos_nominales": 0.0,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 1525.0,
+          "costos_prestamos": 5000.0
         },
         "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 10812.130000000001,
+          "costos_nominales": 313937.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         }
       }
     },
     "2026-09": {
-      "PLADES": {
-        "ADMINISTRACIÓN": {
-          "costos_nominales": 388359.1,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "FABRICA": {
-          "costos_nominales": 145259.83,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "LABORATORIO": {
-          "costos_nominales": 54532.18,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 237970.8,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 202318.02000000002,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "MARKETING": {
-          "costos_nominales": 37385.88,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        }
-      },
+      "PLADES": {},
       "REMIPLAT": {
         "ADMINISTRACION": {
-          "costos_nominales": 2248522.3600000003,
+          "costos_nominales": 170425.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "COMERCIAL": {
-          "costos_nominales": 721113.44,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "COMERCIAL DOLORES": {
-          "costos_nominales": 1684.31,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DEPOSITO MVDEO.": {
-          "costos_nominales": 1499.62,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "FABRICA": {
-          "costos_nominales": 739454.0099999998,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 293962.27,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "LOGISTICA GRANEL": {
-          "costos_nominales": 102518.43,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "MANTENIMIENTO DE STOCK": {
-          "costos_nominales": 465978.96,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         },
         "MARKETING": {
-          "costos_nominales": 564087.2000000001,
+          "costos_nominales": 40000.0,
           "costos_horas_extras": 0,
           "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
+          "costos_adelantos": 0.0,
+          "costos_prestamos": 0.0
         }
       },
-      "VILADOS": {
-        "ADMINISTRACION": {
-          "costos_nominales": 2916.59,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "DIRECCION": {
-          "costos_nominales": 0.0,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        },
-        "LOGISTICA EMBOLSADO": {
-          "costos_nominales": 10812.130000000001,
-          "costos_horas_extras": 0,
-          "total_horas_extras_dias": 0,
-          "costos_adelantos": 0,
-          "costos_prestamos": 0
-        }
-      }
+      "VILADOS": {}
     }
   }
 }
